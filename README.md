@@ -13,6 +13,7 @@
 </tr>
 <tr>
 <td><img src="assets/images/settings-light.png" /></td>
+<td><img src="assets/images/settings-dark.png" /></td>
 <td></td>
 
 </tr>
