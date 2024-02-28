@@ -1,0 +1,7 @@
+{
+  "bracketSameLine": true,
+  "printWidth": 80,
+  "trailingComma": "all",
+  "tailwindFunctions": ["tv"],
+  "prettier-plugin-tailwindcss": true
+}

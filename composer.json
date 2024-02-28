@@ -1,0 +1,21 @@
+{
+  "name": "nurency/myplugin",
+  "description": "Wordpress vite react boilerplate",
+  "autoload": {
+    "psr-4": {
+      "MyPlugin\\": "includes/",
+      "MyPlugin\\Admin\\": "includes/admin/",
+      "MyPlugin\\Frontend\\": "includes/frontend/",
+      "MyPlugin\\Database\\": "database/"
+    },
+    "files": [
+      "libs/assets.php",
+      "libs/db.php",
+      "includes/functions.php"
+    ]
+  },
+  "require": {
+    "haruncpi/wp-api": "^1.0",
+    "prappo/wp-eloquent": "^3.0"
+  }
+}

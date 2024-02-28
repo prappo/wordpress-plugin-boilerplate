@@ -1,0 +1,24 @@
+{
+  "include": ["vite.config.js", "js/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./js/src/*"
+      ]
+    },
+    "checkJs": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2020"
+  }
+}
