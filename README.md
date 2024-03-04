@@ -20,14 +20,31 @@
 </table>
 
 ## Install
-
-`composer install`
-`npm install`
+```bash
+npx wordpress-plugin-boilerplate
+```
+Or 
+```bash
+git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
+```
+```bash
+cd wordpress-plugin-boilerplate
+```
+```bash
+composer install
+```
+```bash
+npm install
+```
 
 ## Development
 
-`npm run dev`
+```bash
+npm run dev
+```
 
 ## Build
 
-`npm run build`
+```bash
+npm run build
+```

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import axios from 'axios';
 import inquirer from 'inquirer';
 import extract from 'extract-zip';
