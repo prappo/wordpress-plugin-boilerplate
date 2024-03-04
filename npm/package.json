@@ -1,0 +1,30 @@
+{
+  "name": "wordpress-plugin-boilerplate",
+  "version": "1.0.0",
+  "description": "WordPress Plugin Boilerplate utilizing modern web technologies and tools such as React, TypeScript, SASS, Tailwind CSS, Shadcn UI, Vite, Storybook, and more.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prappo/wordpress-plugin-boilerplate.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "boilerplate"
+  ],
+  "author": "prappo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prappo/wordpress-plugin-boilerplate/issues"
+  },
+  "homepage": "https://github.com/prappo/wordpress-plugin-boilerplate#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "extract-zip": "^2.0.1",
+    "inquirer": "^9.2.15"
+  }
+}
