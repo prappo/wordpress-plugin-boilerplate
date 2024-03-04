@@ -1,6 +1,6 @@
 {
   "name": "wordpress-plugin-boilerplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "WordPress Plugin Boilerplate utilizing modern web technologies and tools such as React, TypeScript, SASS, Tailwind CSS, Shadcn UI, Vite, Storybook, and more.",
   "main": "index.js",
   "type": "module",
