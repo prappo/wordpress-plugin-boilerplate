@@ -1,6 +1,4 @@
-
 import {
-    
     CircleUser,
     Home,
     Mail,
@@ -9,8 +7,7 @@ import {
     Package2,
 
 } from "lucide-react"
-
-
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "../mode-toggle";
 import {
@@ -23,12 +20,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../Icons/Logo";
 import { clsx } from "clsx";
-
 import UpgradeProCard from "@/components/misc/UpgradeProCard"
-
 
 const navigation = [
     {
@@ -55,7 +50,16 @@ const navigation = [
 export default function LayoutOne() {
     const showApplicationLayout = !myplugin.isAdmin;
     let location = useLocation();
+    const navigate = useNavigate();
     const pageTitle = location.pathname.split("/")[1];
+ 
+    useEffect(() => {
+        if (pageTitle) {
+          navigate(pageTitle);
+        } else {
+          navigate(navigation[0].href);
+        }
+      }, []);
 
     return (
         <div className={`grid min-h-screen w-full ${showApplicationLayout ? 'md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]' : ''}`}>
@@ -70,9 +74,10 @@ export default function LayoutOne() {
                     </div>
                     <div className="flex-1">
                         <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-                            {navigation.map((item) => {
+                            {navigation.map((item,index) => {
                                 return <NavLink
                                     to={item.href}
+                                    key={index}
                                     className={
                                         clsx(
                                             "flex items-center gap-3 rounded-lg px-3 py-2  transition-all hover:text-primary",
@@ -118,9 +123,10 @@ export default function LayoutOne() {
                                     <Package2 className="h-6 w-6" />
                                     <span className="sr-only">Plugin Name</span>
                                 </a>
-                                {navigation.map((item) => {
+                                {navigation.map((item,index) => {
                                     return <NavLink
                                         to={item.href}
+                                        key={index}
                                         className={
                                             clsx(
                                                 "flex items-center gap-3 rounded-lg px-3 py-2  transition-all hover:text-primary",
