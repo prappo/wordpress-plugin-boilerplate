@@ -48,11 +48,13 @@ const navigation = [
 ];
 
 export default function LayoutOne() {
-    const showApplicationLayout = !myplugin.isAdmin;
+    let showApplicationLayout = !myplugin.isAdmin;
     let location = useLocation();
     const navigate = useNavigate();
     const pageTitle = location.pathname.split("/")[1];
- 
+    if(location.pathname === "/login") {
+        showApplicationLayout = false;
+    }
     useEffect(() => {
         if (pageTitle) {
           navigate(pageTitle);
@@ -102,6 +104,7 @@ export default function LayoutOne() {
             </div>
             }
             <div className="flex flex-col">
+                {showApplicationLayout && 
                 <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -169,6 +172,7 @@ export default function LayoutOne() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </header>
+                }
                 <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
                     <Outlet />
                 </main>

@@ -4,12 +4,18 @@ import Settings from "./pages/settings";
 import ErrorPage from "./pages/error/Error";
 import Inbox from "./pages/inbox";
 import Dashboard from "./pages/dashboard";
+import LoginPage from "./pages/login";
+
 export const router = createHashRouter([
   {
     path: "/",
     element: <ApplicationLayout />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+      },
       {
         path: "dashboard",
         element: <Dashboard />,
@@ -23,6 +29,10 @@ export const router = createHashRouter([
         path: "settings",
         element: <Settings />,
       },
+      {
+        path: "login",
+        element: <LoginPage />,
+      }
     ],
   },
 ]);
