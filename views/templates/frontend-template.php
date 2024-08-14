@@ -14,7 +14,7 @@ function myplugin_remove_unwanted_scripts_and_styles() {
 		}
 	}
 
-	$styles_to_keep = array( 'admin-bar', 'wp-auth-check', 'plugin-installer-style', 'colors' );
+	$styles_to_keep = array( 'admin-bar', 'wp-auth-check', 'plugin-installer-style', 'colors', 'myplugin-0' );
 
 	foreach ( $wp_styles->queue as $handle ) {
 
