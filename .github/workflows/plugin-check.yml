@@ -1,0 +1,65 @@
+- uses: wordpress/plugin-check-action@v1
+  with:
+    # Personal access token (PAT) used to comment on pull requests.
+    # Not currently used.
+    #
+    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #
+    # Default: ${{ github.token }}
+    repo-token: ''
+
+    # Build directory of your plugin.
+    # Defaults to current directory / repository root.
+    #
+    # Default: './'
+    build-dir: ''
+
+    # List of checks to run.
+    # Each check should be separated with new lines.
+    # Examples: i18n_usage, file_type, late_escaping.
+    # By default, all checks are run.
+    #
+    # Default: ''
+    checks: ''
+
+    # List of checks to exclude from running.
+    # Each check should be separated with new lines.
+    # Examples: i18n_usage, file_type, late_escaping.
+    # Applies after the `checks` input.
+    #
+    # Default: ''
+    exclude-checks: ''
+
+    # List of categories to limit checks to.
+    # Each category should be separated with new lines.
+    # Examples: general, security
+    # By default, checks in all categories are run.
+    #
+    # Default: ''
+    categories: ''
+
+    # List of directories to exclude from checks.
+    # Each category should be separated with new lines.
+    #
+    # Default: ''
+    exclude-directories: ''
+    
+    # Whether to ignore warnings reported by Plugin Check.
+    #
+    # Default: false
+    ignore-warnings: ''
+
+    # Whether to ignore errors reported by Plugin Check.
+    #
+    # Default: false
+    ignore-errors: ''
+
+    # Whether to include experimental checks.
+    #
+    # Default: true
+    include-experimental: ''
+
+    # WordPress version to use. Supports "latest" or "trunk".
+    #
+    # Default: latest
+    wp-version: ''
