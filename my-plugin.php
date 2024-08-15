@@ -1,16 +1,14 @@
 <?php
 
 /**
- * Plugin Name: My Plugin
- * Description: Plugin Description
+ * Plugin Name: WordPress Plugin Boilerplate
+ * Description: A boilerplate for WordPress plugins.
  * Author: Prappo
  * Author URI: https://prappo.dev
  * License: GPLv2
  * Version: 1.0.0
- * Text Domain: my-plugin
+ * Text Domain: wordpress-plugin-boilerplate
  * Domain Path: /languages
- *
- * @package myplugin
  */
 
 use MyPlugin\Core\Install;
