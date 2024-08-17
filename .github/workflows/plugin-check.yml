@@ -29,7 +29,7 @@ jobs:
                   # Defaults to current directory / repository root.
                   #
                   # Default: './'
-                  build-dir: './'
+                  build-dir: './build'
 
                   # List of checks to run.
                   # Each check should be separated with new lines.
