@@ -5,10 +5,10 @@ module.exports = function (grunt) {
     // Define files to include/exclude in the release package
     const distFiles = [
         '**',                           // Include all files by default
-        '!artifacts/**',                // Exclude build artifacts
+        '!artifacts/**',                // Exclude release artifacts
         '!bin/**',                      // Exclude binary files
         '!bower_components/**',         // Exclude Bower components
-        '!build/**',                    // Exclude build directory
+        '!release/**',                    // Exclude release directory
         '!node_modules/**',             // Exclude Node.js modules
         '!packages/**',                 // Exclude packages directory
         '!**/node_modules/**',          // Exclude nested Node.js modules
@@ -40,21 +40,21 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg,
 
-        // Task to copy files to the build directory
+        // Task to copy files to the release directory
         copy: {
             main: {
                 expand: true,
                 src: distFiles,
-                dest: 'build/wordpress-plugin-boilerplate',
+                dest: 'release/wordpress-plugin-boilerplate',
             },
         },
 
-        // Task to compress the build directory into a zip file
+        // Task to compress the release directory into a zip file
         compress: {
             main: {
                 options: {
                     mode: 'zip',
-                    archive: './build/wordpress-plugin-boilerplate-<%= pkg.version %>.zip',
+                    archive: './release/wordpress-plugin-boilerplate-<%= pkg.version %>.zip',
                 },
                 expand: true,
                 src: distFiles,
@@ -66,8 +66,8 @@ module.exports = function (grunt) {
     // Load all grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
-    // Register 'build' task to copy files and create a zip archive
-    grunt.registerTask('build', ['copy:main', 'compress']);
+    // Register 'release' task to copy files and create a zip archive
+    grunt.registerTask('release', ['copy:main', 'compress']);
 
     // Set linefeed style to Unix (LF)
     grunt.util.linefeed = '\n';
