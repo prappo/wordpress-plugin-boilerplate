@@ -10,6 +10,7 @@
     "format:fix": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "release": "npm run build && grunt release",
     "i18n": "wp i18n make-pot . languages/myplugin.pot --domain=myplugin --exclude='*/js/*,build'"
   },
   "devDependencies": {

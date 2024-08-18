@@ -2,18 +2,18 @@
 ## Preview
 <table>
 <tr>
-<td><img src="assets/images/dashboard-light.png" /></td>
-<td><img src="assets/images/dashboard-dark.png" /></td>
+<td><img src="artworks/images/dashboard-light.png" /></td>
+<td><img src="artworks/images/dashboard-dark.png" /></td>
 
 </tr>
 <tr>
-<td><img src="assets/images/inbox-light.png" /></td>
-<td><img src="assets/images/inbox-dark.png" /></td>
+<td><img src="artworks/images/inbox-light.png" /></td>
+<td><img src="artworks/images/inbox-dark.png" /></td>
 
 </tr>
 <tr>
-<td><img src="assets/images/settings-light.png" /></td>
-<td><img src="assets/images/settings-dark.png" /></td>
+<td><img src="artworks/images/settings-light.png" /></td>
+<td><img src="artworks/images/settings-dark.png" /></td>
 <td></td>
 
 </tr>
@@ -48,3 +48,11 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Release
+
+```bash
+npm run release
+```
+
+It will create a relase plugin in `release` folder

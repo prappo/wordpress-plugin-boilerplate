@@ -14,6 +14,17 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: '20' # Specify the Node.js version you want to use
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build the project
+              run: npm run release
+
             - name: Run Plugin Check
               uses: wordpress/plugin-check-action@v1
               with:
@@ -29,7 +40,7 @@ jobs:
                   # Defaults to current directory / repository root.
                   #
                   # Default: './'
-                  build-dir: './build'
+                  build-dir: './release/wordpress-plugin-boilerplate'
 
                   # List of checks to run.
                   # Each check should be separated with new lines.
