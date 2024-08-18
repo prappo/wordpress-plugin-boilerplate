@@ -9,7 +9,8 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "i18n": "wp i18n make-pot . languages/myplugin.pot --domain=myplugin --exclude='*/js/*,build'"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
