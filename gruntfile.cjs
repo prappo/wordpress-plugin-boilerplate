@@ -24,6 +24,7 @@ const distFiles = [
     '!composer.json',
     '!composer.lock',
     '!contributing.md',
+    '!docs/**',
     '!gruntfile.cjs',
     '!package.json',
     '!package-lock.json',
