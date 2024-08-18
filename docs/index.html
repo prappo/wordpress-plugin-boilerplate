@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordpress Plugin Boilerplate</title>
 </head>
+
 <body>
     <h1>Wordpress Plugin Boilerplate</h1>
-    
+
+    <iframe id="wp-playground" style="width: 1200px; height: 800px"></iframe>
+    <script type="module">
+        import { startPlaygroundWeb } from 'https://playground.wordpress.net/client/index.js';
+
+        const client = await startPlaygroundWeb({
+            iframe: document.getElementById('wp-playground'),
+            remoteUrl: `https://playground.wordpress.net/remote.html`,
+            blueprint: {
+                landingPage: '/wp-admin/',
+                preferredVersions: {
+                    php: '8.0',
+                    wp: 'latest',
+                },
+                steps: [
+                    {
+                        step: 'login',
+                        username: 'admin',
+                        password: 'password',
+                    },
+                    {
+                        step: 'installPlugin',
+                        pluginZipFile: {
+                            resource: 'external',
+                            url: 'https://prappo.github.io/wordpress-plugin-boilerplate/plugin/wordpress-plugin-boilerplate.zip',
+                        },
+                    },
+                ],
+            },
+        });
+
+        
+    </script>
+
 </body>
+
 </html>
