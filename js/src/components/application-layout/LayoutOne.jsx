@@ -5,6 +5,7 @@ import {
     Menu,
     SlidersHorizontal,
     Package2,
+    BarChart
 
 } from "lucide-react"
 import { useEffect } from "react";
@@ -45,6 +46,12 @@ const navigation = [
         icon: SlidersHorizontal,
         current: false,
     },
+    {
+        name: "Charts",
+        href: "charts",
+        icon: BarChart,
+        current: false,
+    }
 ];
 
 export default function LayoutOne() {

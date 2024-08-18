@@ -77,6 +77,15 @@ class Menu {
 
 			array(
 				'parent_slug' => $this->parent_slug,
+				'page_title'  => __( 'Chart', 'myplugin' ),
+				'menu_title'  => __( 'Chart', 'myplugin' ),
+				'capability'  => 'manage_options',
+				'menu_slug'   => $myplugin_url . '/#/charts',
+				'function'    => null, // Uses the same callback function as parent menu.
+			),
+
+			array(
+				'parent_slug' => $this->parent_slug,
 				'page_title'  => __( 'Settings', 'myplugin' ),
 				'menu_title'  => __( 'Settings', 'myplugin' ),
 				'capability'  => 'manage_options',

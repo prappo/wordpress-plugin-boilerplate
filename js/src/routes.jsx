@@ -5,6 +5,7 @@ import ErrorPage from "./pages/error/Error";
 import Inbox from "./pages/inbox";
 import Dashboard from "./pages/dashboard";
 import LoginPage from "./pages/login";
+import Charts from "./pages/charts";
 
 export const router = createHashRouter([
   {
@@ -32,6 +33,10 @@ export const router = createHashRouter([
       {
         path: "login",
         element: <LoginPage />,
+      },
+      {
+        path: "charts",
+        element: <Charts />,
       }
     ],
   },
