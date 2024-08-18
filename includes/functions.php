@@ -1,4 +1,12 @@
 <?php
+/**
+ * Plugin Function file.
+ *
+ * @since 1.0.0
+ *
+ * @package WordPress Plugin Boilerplate
+ */
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -24,4 +32,20 @@ function myplugin_install_page( $page_title, $page_name, $page_template_file_nam
 		// Add post meta for the page template.
 		add_post_meta( $id, '_wp_page_template', $page_template_file_name );
 	}
+}
+
+/**
+ * Retrieves the configuration from the specified file.
+ *
+ * @param string $config_file_name The name of the configuration file.
+ * @return array
+ *
+ * @since 1.0.0
+ */
+function myplugin_get_config( $config_file_name ) {
+	$config_file_path = __DIR__ . '/../config/' . $config_file_name . '.php';
+	if ( file_exists( $config_file_path ) ) {
+		return require $config_file_path;
+	}
+	return array();
 }

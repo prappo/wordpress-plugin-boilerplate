@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: WordPress Plugin Boilerplate
  * Description: A boilerplate for WordPress plugins.
@@ -9,6 +8,8 @@
  * Version: 1.0.0
  * Text Domain: wordpress-plugin-boilerplate
  * Domain Path: /languages
+ *
+ * @package WordPress Plugin Boilerplate
  */
 
 use MyPlugin\Core\Install;
