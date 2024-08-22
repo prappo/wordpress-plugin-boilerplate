@@ -1,0 +1,39 @@
+{
+    "name": "prappo/wp-eloquent",
+    "description": "Eloquent ORM for wordpress.",
+    "license": "MIT",
+    "homepage": "https://github.com/prappo/wp-eloquent",
+    "support": {
+        "issues": "https://github.com/prappo/wp-eloquent/issues",
+        "source": "https://github.com/prappo/wp-eloquent"
+    },
+    "keywords": ["laravel", "database", "sql", "orm", "prappo","wp-eloquent","wordpress"],
+    "authors": [
+        {
+            "name": "prappo",
+            "email": "prappo.prince@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prappo\\WpEloquent\\": "src"
+        },
+        "files":[
+            "src/Support/helpers.php"
+        ]
+    },
+    "suggest": {
+        "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6).",
+        "fzaninotto/faker": "Required to use the eloquent factory builder (^1.9.1).",
+        "symfony/finder": "Required to use Eloquent model factories (^5.1)."
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

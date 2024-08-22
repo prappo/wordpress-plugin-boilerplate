@@ -1,6 +1,6 @@
 <?php
 
-namespace MyPlugin\Trait;
+namespace MyPlugin\Traits;
 
 /**
  * Trait Base

@@ -1,13 +1,11 @@
 <?php
 use MyPlugin\Core\Api;
-use MyPlugin\Trait\Base;
+use MyPlugin\Traits\Base;
 use MyPlugin\Admin\Menu;
 use MyPlugin\Core\Template;
 use MyPlugin\Frontend\Frontend;
 
 defined( 'ABSPATH' ) || exit;
-
-
 
 /**
  * Class MyPlugin

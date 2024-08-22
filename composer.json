@@ -1,11 +1,9 @@
 {
-  "name": "nurency/myplugin",
-  "description": "Wordpress vite react boilerplate",
+  "name": "prappo/wordpress-plugin-boilerplate",
+  "description": "Wordpress Plugin boilerplate",
   "autoload": {
     "psr-4": {
       "MyPlugin\\": "includes/",
-      "MyPlugin\\Admin\\": "includes/admin/",
-      "MyPlugin\\Frontend\\": "includes/frontend/",
       "MyPlugin\\Database\\": "database/"
     },
     "files": [

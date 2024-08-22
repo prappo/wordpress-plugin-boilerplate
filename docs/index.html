@@ -17,11 +17,15 @@
         const client = await startPlaygroundWeb({
             iframe: document.getElementById('wp-playground'),
             remoteUrl: `https://playground.wordpress.net/remote.html`,
+
             blueprint: {
                 landingPage: '/wp-admin/',
                 preferredVersions: {
                     php: '8.0',
                     wp: 'latest',
+                },
+                features: {
+                    networking: true,
                 },
                 steps: [
                     {
@@ -32,15 +36,15 @@
                     {
                         step: 'installPlugin',
                         pluginZipFile: {
-                            resource: 'external',
-                            url: 'https://prappo.github.io/wordpress-plugin-boilerplate/plugin/wordpress-plugin-boilerplate.zip',
+                            resource: 'url',
+                            url: 'http://127.0.0.1:5500/wp-content/plugins/wordpress-plugin-boilerplate/docs/plugin/wordpress-plugin-boilerplate.zip',
                         },
                     },
                 ],
             },
         });
 
-        
+
     </script>
 
 </body>

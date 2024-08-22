@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'nurency/myplugin',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'c6ec4f51f0b4e89901fa9978b53033167387a735',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'haruncpi/wp-api' => array(
+            'pretty_version' => 'v1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '2bbadffae727de699bd800099f724af6044de79e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../haruncpi/wp-api',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nurency/myplugin' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'c6ec4f51f0b4e89901fa9978b53033167387a735',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'prappo/wp-eloquent' => array(
+            'pretty_version' => 'v3.0.3',
+            'version' => '3.0.3.0',
+            'reference' => '70bdb93a0cea6bac2527a6954472444e37d73b2a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../prappo/wp-eloquent',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
