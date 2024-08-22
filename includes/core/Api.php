@@ -22,7 +22,7 @@ class API {
 	 * @return void
 	 */
 	public function init() {
-		ApiConfig::set_route_file( MYPLUGIN_DIR . '/includes/routes/api.php' )
+		ApiConfig::set_route_file( MYPLUGIN_DIR . '/includes/Routes/Api.php' )
 			->set_namespace( 'MyPlugin\Api' )
 			->init();
 	}

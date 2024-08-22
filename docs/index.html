@@ -5,12 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordpress Plugin Boilerplate</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        iframe{
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Wordpress Plugin Boilerplate</h1>
-
-    <iframe id="wp-playground" style="width: 1200px; height: 800px"></iframe>
+    <iframe id="wp-playground" style="width: 100%; height: 800px"></iframe>
     <script type="module">
         import { startPlaygroundWeb } from 'https://playground.wordpress.net/client/index.js';
 
@@ -19,7 +27,7 @@
             remoteUrl: `https://playground.wordpress.net/remote.html`,
 
             blueprint: {
-                landingPage: '/wp-admin/',
+                landingPage: '/wp-admin/admin.php?page=myplugin#/dashboard',
                 preferredVersions: {
                     php: '8.0',
                     wp: 'latest',
@@ -37,7 +45,7 @@
                         step: 'installPlugin',
                         pluginZipFile: {
                             resource: 'url',
-                            url: 'http://127.0.0.1:5500/wp-content/plugins/wordpress-plugin-boilerplate/docs/plugin/wordpress-plugin-boilerplate.zip',
+                            url: 'https://prappo.github.io/wordpress-plugin-boilerplate/plugin/wordpress-plugin-boilerplate.zip',
                         },
                     },
                 ],
