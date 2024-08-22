@@ -16,8 +16,8 @@ use MyPlugin\Core\Install;
 
 defined( 'ABSPATH' ) || exit;
 
-require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/plugin.php';
+require_once plugin_dir_path( __FILE__ ) . '/vendor/autoload.php';
+require_once plugin_dir_path( __FILE__ ) . '/plugin.php';
 
 /**
  * Initializes the Myplugin plugin when plugins are loaded.
@@ -33,4 +33,4 @@ function myplugin_init() {
 add_action( 'plugins_loaded', 'myplugin_init' );
 
 // Hook for plugin activation.
-register_activation_hook( __FILE__, array( Install::get_instance(), 'init' ) );
+// register_activation_hook( __FILE__, array( Install::get_instance(), 'init' ) );
