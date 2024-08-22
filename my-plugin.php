@@ -12,12 +12,12 @@
  * @package WordPress Plugin Boilerplate
  */
 
-use MyPlugin\Core\Install;
+// use MyPlugin\Core\Install;
 
 defined( 'ABSPATH' ) || exit;
 
-require_once plugin_dir_path( __FILE__ ) . '/vendor/autoload.php';
-require_once plugin_dir_path( __FILE__ ) . '/plugin.php';
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+require_once plugin_dir_path( __FILE__ ) . 'plugin.php';
 
 /**
  * Initializes the Myplugin plugin when plugins are loaded.

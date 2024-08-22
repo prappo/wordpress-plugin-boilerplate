@@ -1,6 +1,5 @@
 <?php
 use MyPlugin\Core\Api;
-use MyPlugin\Traits\Base;
 use MyPlugin\Admin\Menu;
 use MyPlugin\Core\Template;
 use MyPlugin\Frontend\Frontend;
@@ -16,7 +15,25 @@ defined( 'ABSPATH' ) || exit;
  */
 final class MyPlugin {
 
-	use Base;
+	/**
+	 * The singleton instance.
+	 *
+	 * @var mixed
+	 */
+	private static $instance;
+
+	/**
+	 * Retrieves the singleton instance. If it does not exist, creates a new instance.
+	 *
+	 * @return mixed The singleton instance.
+	 */
+	public static function get_instance() {
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
 
 	/**
 	 * Class constructor to set up constants for the plugin.
