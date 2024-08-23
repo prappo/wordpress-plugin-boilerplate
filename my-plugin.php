@@ -12,7 +12,7 @@
  * @package WordPress Plugin Boilerplate
  */
 
-// use MyPlugin\Core\Install;
+use MyPlugin\Core\Install;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -33,4 +33,4 @@ function myplugin_init() {
 add_action( 'plugins_loaded', 'myplugin_init' );
 
 // Hook for plugin activation.
-// register_activation_hook( __FILE__, array( Install::get_instance(), 'init' ) );
+register_activation_hook( __FILE__, array( Install::get_instance(), 'init' ) );
