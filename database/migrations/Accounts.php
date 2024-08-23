@@ -1,10 +1,17 @@
 <?php
+/**
+ * Database configuration using Eloquent ORM.
+ *
+ * @package MyPlugin
+ * @subpackage Database
+ * @since 1.0.0
+ */
 
 namespace MyPlugin\Database\Migrations;
 
 use MyPlugin\Interface\Migration;
-use Prappo\WpEloquent\Database\Schema\Blueprint;
-use Prappo\WpEloquent\Support\Facades\Schema;
+use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class Accounts
@@ -26,10 +33,10 @@ class Accounts implements Migration {
 	 * Run the migrations.
 	 */
 	public static function up() {
-		if ( Schema::hasTable( self::$table ) ) {
+		if ( Capsule::schema()->hasTable( self::$table ) ) {
 			return;
 		}
-		Schema::create(
+		Capsule::schema()->create(
 			self::$table,
 			function ( Blueprint $table ) {
 				$table->id();

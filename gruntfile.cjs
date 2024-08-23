@@ -90,6 +90,12 @@ grunt.initConfig({
             src: distFiles,
             dest: '/wordpress-plugin-boilerplate',
         },
+        todocs: {
+            options: {
+                mode: 'zip',
+                archive: `./docs/plugin/wordpress-plugin-boilerplate.zip`,
+            }
+        },
     },
 });
 
@@ -97,7 +103,7 @@ grunt.initConfig({
 loadGruntTasks(grunt);
 
 // Register 'release' task to copy files and create a zip archive
-grunt.registerTask('release', ['copy:main', 'compress:main', 'compress:version']);
+grunt.registerTask('release', ['copy:main', 'compress:main', 'compress:version', 'compress:todocs', 'clean:mapFiles']);
 
 // Set linefeed style to Unix (LF)
 grunt.util.linefeed = '\n';

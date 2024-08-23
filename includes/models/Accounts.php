@@ -1,8 +1,16 @@
 <?php
+/**
+ * Class Accounts
+ *
+ * Represents the Accounts model for MyPlugin.
+ *
+ * @package MyPlugin\Models
+ * @since 1.0.0
+ */
 
 namespace MyPlugin\Models;
 
-use Prappo\WpEloquent\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Accounts

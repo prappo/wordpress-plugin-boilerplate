@@ -1,8 +1,15 @@
 <?php
+/**
+ * Class Users
+ *
+ * Represents the Users model for MyPlugin.
+ *
+ * @package MyPlugin\Models
+ */
 
 namespace MyPlugin\Models;
 
-use Prappo\WpEloquent\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Users
