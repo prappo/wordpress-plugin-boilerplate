@@ -94,7 +94,10 @@ grunt.initConfig({
             options: {
                 mode: 'zip',
                 archive: `./docs/plugin/wordpress-plugin-boilerplate.zip`,
-            }
+            },
+            expand: true,
+            src: distFiles,
+            dest: '/wordpress-plugin-boilerplate',
         },
     },
 });
