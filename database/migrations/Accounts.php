@@ -10,8 +10,8 @@
 namespace MyPlugin\Database\Migrations;
 
 use MyPlugin\Interface\Migration;
-use Illuminate\Database\Capsule\Manager as Capsule;
-use Illuminate\Database\Schema\Blueprint;
+use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
+use Prappo\WpEloquent\Database\Schema\Blueprint;
 
 /**
  * Class Accounts
@@ -40,7 +40,7 @@ class Accounts implements Migration {
 			self::$table,
 			function ( Blueprint $table ) {
 				$table->id();
-				$table->string( 'user_id' );
+				$table->string( 'user_id' )->uniqid();
 				$table->string( 'host' );
 				$table->integer( 'port' );
 				$table->string( 'first_name' );

@@ -3,6 +3,7 @@
 namespace MyPlugin\Core;
 
 use MyPlugin\Database\Migrations\Accounts;
+use MyPlugin\Database\Seeders\Accounts as SeedersAccounts;
 use MyPlugin\Traits\Base;
 
 /**
@@ -14,14 +15,24 @@ class Install {
 
 	use Base;
 
+	/**
+	 * Initialize the class
+	 *
+	 * @return void
+	 */
 	public function init() {
 
 		$this->install_pages();
 		$this->install_tables();
+		$this->insert_data();
 	}
 
+	/**
+	 * Install the pages
+	 *
+	 * @return void
+	 */
 	private function install_pages() {
-		// Install frontend page
 		myplugin_install_page(
 			Template::FRONTEND_TEMPLATE_NAME,
 			Template::FRONTEND_TEMPLATE_SLUG,
@@ -29,7 +40,22 @@ class Install {
 		);
 	}
 
+	/**
+	 * Install the tables
+	 *
+	 * @return void
+	 */
 	private function install_tables() {
 		Accounts::up();
+	}
+
+	/**
+	 * Insert data to the tables
+	 *
+	 * @return void
+	 */
+	private function insert_data() {
+		// Insert data to the tables.
+		SeedersAccounts::run();
 	}
 }

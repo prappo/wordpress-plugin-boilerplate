@@ -1,5 +1,10 @@
 <?php
-// If uninstall not called from WordPress, then exit
+/**
+ * Uninstall the plugin
+ *
+ * @package WordPress_Plugin_Boilerplate
+ * @subpackage Database
+ */
 
 use MyPlugin\Database\Migrations\Accounts;
 
@@ -9,5 +14,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-// delete tables from database which is created by this plugin
+// delete tables from database which is created by this plugin.
 Accounts::down();

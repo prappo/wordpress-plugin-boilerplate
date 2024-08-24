@@ -10,7 +10,7 @@
 
 namespace MyPlugin\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Prappo\WpEloquent\Database\Eloquent\Model;
 
 /**
  * Class Accounts
@@ -27,4 +27,22 @@ class Accounts extends Model {
 	 * @var string
 	 */
 	protected $table = 'accounts';
+
+	/**
+	 * The primary key for the model.
+	 *
+	 * @var array
+	 */
+	protected $fillable = array(
+		'user_id',
+		'host',
+		'port',
+		'first_name',
+		'last_name',
+		'email',
+		'name',
+		'password',
+		'created_at',
+		'updated_at',
+	);
 }
