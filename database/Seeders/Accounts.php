@@ -8,6 +8,7 @@
 
 namespace MyPlugin\Database\Seeders;
 
+use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 /**
  * Class Accounts
  *
@@ -17,6 +18,7 @@ namespace MyPlugin\Database\Seeders;
  * @since 1.0.0
  */
 class Accounts {
+	private static $table = 'accounts';
 
 	/**
 	 * Run the database seeds.
@@ -24,6 +26,7 @@ class Accounts {
 	 * @return void
 	 */
 	public static function run() {
+
 		// Insert data to the tables.
 		$accounts = array(
 			array(
@@ -53,7 +56,9 @@ class Accounts {
 		);
 
 		foreach ( $accounts as $account ) {
-			\MyPlugin\Models\Accounts::create( $account );
+			if ( ! \MyPlugin\Models\Accounts::where( 'user_id', $account['user_id'] )->exists() ) {
+				\MyPlugin\Models\Accounts::create( $account );
+			}
 		}
 	}
 }
