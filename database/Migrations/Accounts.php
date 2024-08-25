@@ -12,6 +12,7 @@ namespace MyPlugin\Database\Migrations;
 use MyPlugin\Interface\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
+use Prappo\WpEloquent\Support\Facades\Schema;
 
 /**
  * Class Accounts
