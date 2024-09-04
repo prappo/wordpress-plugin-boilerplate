@@ -2,11 +2,11 @@
 /**
  * Database configuration using Eloquent ORM.
  *
- * @package MyPlugin
+ * @package WordPressPluginBoilerplate
  * @subpackage Database
  */
 
-namespace MyPlugin\Database\Seeders;
+namespace WordPressPluginBoilerplate\Database\Seeders;
 
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 /**
@@ -14,7 +14,7 @@ use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
  *
  * Represents the seeder for the 'accounts' table.
  *
- * @package MyPlugin\Database\Seeders
+ * @package WordPressPluginBoilerplate\Database\Seeders
  * @since 1.0.0
  */
 class Accounts {
@@ -56,8 +56,8 @@ class Accounts {
 		);
 
 		foreach ( $accounts as $account ) {
-			if ( ! \MyPlugin\Models\Accounts::where( 'user_id', $account['user_id'] )->exists() ) {
-				\MyPlugin\Models\Accounts::create( $account );
+			if ( ! \WordPressPluginBoilerplate\Models\Accounts::where( 'user_id', $account['user_id'] )->exists() ) {
+				\WordPressPluginBoilerplate\Models\Accounts::create( $account );
 			}
 		}
 	}

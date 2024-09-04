@@ -2,21 +2,21 @@
 /**
  * Class Users
  *
- * Represents the Users model for MyPlugin.
+ * Represents the Users model for WordPressPluginBoilerplate.
  *
- * @package MyPlugin\Models
+ * @package WordPressPluginBoilerplate\Models
  */
 
-namespace MyPlugin\Models;
+namespace WordPressPluginBoilerplate\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Users
  *
- * Represents the Users model for MyPlugin.
+ * Represents the Users model for WordPressPluginBoilerplate.
  *
- * @package MyPlugin\Models
+ * @package WordPressPluginBoilerplate\Models
  */
 class Users extends Model {
 

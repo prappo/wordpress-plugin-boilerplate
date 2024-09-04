@@ -3,8 +3,8 @@
   "description": "Wordpress Plugin boilerplate",
   "autoload": {
     "psr-4": {
-      "MyPlugin\\": "includes/",
-      "MyPlugin\\Database\\": "database/"
+      "WordPressPluginBoilerplate\\": "includes/",
+      "WordPressPluginBoilerplate\\Database\\": "database/"
     },
     "files": [
       "libs/assets.php",

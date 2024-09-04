@@ -6,7 +6,7 @@
  * @subpackage Database
  */
 
-use MyPlugin\Database\Migrations\Accounts;
+use WordPressPluginBoilerplate\Database\Migrations\Accounts;
 
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;

@@ -12,7 +12,7 @@
  * @package WordPress Plugin Boilerplate
  */
 
-use MyPlugin\Core\Install;
+use WordPressPluginBoilerplate\Core\Install;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -20,17 +20,17 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 require_once plugin_dir_path( __FILE__ ) . 'plugin.php';
 
 /**
- * Initializes the Myplugin plugin when plugins are loaded.
+ * Initializes the WordPressPluginBoilerplate plugin when plugins are loaded.
  *
  * @since 1.0.0
  * @return void
  */
-function myplugin_init() {
-	MyPlugin::get_instance()->init();
+function wordpress_plugin_boilerplate_init() {
+	WordPressPluginBoilerplate::get_instance()->init();
 }
 
 // Hook for plugin initialization.
-add_action( 'plugins_loaded', 'myplugin_init' );
+add_action( 'plugins_loaded', 'wordpress_plugin_boilerplate_init' );
 
 // Hook for plugin activation.
 register_activation_hook( __FILE__, array( Install::get_instance(), 'init' ) );

@@ -1,13 +1,13 @@
 <?php
 
-namespace MyPlugin\Modules\Accounts;
+namespace WordPressPluginBoilerplate\Modules\Accounts;
 
 /**
  * Class Messages
  *
  * Provides static methods to generate standardized messages related to accounts actions.
  *
- * @package MyPlugin\Modules\Accounts
+ * @package WordPressPluginBoilerplate\Modules\Accounts
  */
 class Messages {
 

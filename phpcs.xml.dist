@@ -3,7 +3,7 @@
 
 	<config name="testVersion" value="7.2"/>
 	<config name="minimum_supported_wp_version" value="5.9" />
-	<config name="text_domain" value="myplugin"/>
+	<config name="text_domain" value="wordpress-plugin-boilerplate"/>
 
 	<rule ref="PHPCompatibility">
 		<exclude name="PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore" />
