@@ -2,18 +2,34 @@
 ## Preview
 <table>
 <tr>
-<td><img src="artworks/images/dashboard-light.png" /></td>
-<td><img src="artworks/images/dashboard-dark.png" /></td>
+<td>Light mode</td>
+<td>Dark mode</td>
+</tr>
+<tr>
+<td>
+<img src="artworks/images/dashboard-light.png" />
+</td>
+<td>
+<img src="artworks/images/dashboard-dark.png" />
+</td>
 
 </tr>
 <tr>
-<td><img src="artworks/images/inbox-light.png" /></td>
-<td><img src="artworks/images/inbox-dark.png" /></td>
+<td>
+<img src="artworks/images/inbox-light.png" />
+</td>
+<td>
+<img src="artworks/images/inbox-dark.png" />
+</td>
 
 </tr>
 <tr>
-<td><img src="artworks/images/settings-light.png" /></td>
-<td><img src="artworks/images/settings-dark.png" /></td>
+<td>
+<img src="artworks/images/settings-light.png" />
+</td>
+<td>
+<img src="artworks/images/settings-dark.png" />
+</td>
 <td></td>
 
 </tr>
