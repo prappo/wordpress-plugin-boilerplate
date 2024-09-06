@@ -24,10 +24,7 @@
 </table>
 
 ## Install
-```bash
-npx wordpress-plugin-boilerplate
-```
-Or 
+
 ```bash
 git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
 ```
