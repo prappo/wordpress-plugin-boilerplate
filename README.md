@@ -1,6 +1,10 @@
 # WordPress Plugin Boilerplate (WIP)
 ## Preview
 
+<a href='https://prappo.github.io/wordpress-plugin-boilerplate/' target="_blank"><img alt='Wordpress' src='https://img.shields.io/badge/Live_Preview-100000?style=for-the-badge&logo=Wordpress&logoColor=white&labelColor=21759B&color=21759B'/></a>
+
+### Screenshots
+
 <table>
   <tr>
     <th>Light Mode</th>
