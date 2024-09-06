@@ -1,38 +1,26 @@
 # WordPress Plugin Boilerplate (WIP)
 ## Preview
+
 <table>
-<tr>
-<td>Light mode</td>
-<td>Dark mode</td>
-</tr>
-<tr>
-<td>
-<img src="artworks/images/dashboard-light.png" />
-</td>
-<td>
-<img src="artworks/images/dashboard-dark.png" />
-</td>
-
-</tr>
-<tr>
-<td>
-<img src="artworks/images/inbox-light.png" />
-</td>
-<td>
-<img src="artworks/images/inbox-dark.png" />
-</td>
-
-</tr>
-<tr>
-<td>
-<img src="artworks/images/settings-light.png" />
-</td>
-<td>
-<img src="artworks/images/settings-dark.png" />
-</td>
-<td></td>
-
-</tr>
+  <tr>
+    <th>Light Mode</th>
+    <th>Dark Mode</th>
+  </tr>
+  <tr>
+    <td><img src="artworks/images/dashboard-light.png" /></td>
+    <td><img src="artworks/images/dashboard-dark.png" /></td>
+    
+  </tr>
+  <tr>
+    <td><img src="artworks/images/inbox-light.png" /></td>
+    <td><img src="artworks/images/inbox-dark.png" /></td>
+    
+  </tr>
+    <tr>
+    <td><img src="artworks/images/settings-light.png" /></td>
+    <td><img src="artworks/images/settings-dark.png" /></td>
+    
+  </tr>
 </table>
 
 ## Install
