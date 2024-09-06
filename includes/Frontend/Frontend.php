@@ -27,7 +27,7 @@ class Frontend {
 	/**
 	 * JS Object name for WordPressPluginBoilerplate.
 	 */
-	const OBJ_NAME = 'wordpress_plugin_boilerplate';
+	const OBJ_NAME = 'wordpressPluginBoilerplate';
 
 	/**
 	 * Development script path for WordPressPluginBoilerplate.
@@ -40,7 +40,7 @@ class Frontend {
 	 * @var array
 	 */
 	private $allowed_screens = array(
-		'toplevel_page_wordpress_plugin_boilerplate',
+		'toplevel_page_wordpress-plugin-boilerplate',
 	);
 
 	/**
@@ -61,7 +61,7 @@ class Frontend {
 	public function enqueue_script( $screen ) {
 		$current_screen     = $screen;
 		$template_file_name = Template::FRONTEND_TEMPLATE;
-
+		error_log( $current_screen );
 		if ( ! is_admin() ) {
 			$template_slug = get_page_template_slug();
 			if ( $template_slug ) {
@@ -121,7 +121,7 @@ class Frontend {
 		$avatar_url = '';
 
 		if ( is_user_logged_in() ) {
-			// Get current user's data.
+			// Get current user's data .
 			$current_user = wp_get_current_user();
 
 			// Get username.

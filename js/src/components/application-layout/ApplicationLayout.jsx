@@ -136,14 +136,14 @@ const ApplicationLayout = () => {
                         <ModeToggle />
                           <Avatar>
                             <AvatarImage
-                              src={myplugin.userInfo.avatar}
-                              alt={myplugin.userInfo.username}
+                              src={wordpressPluginBoilerplate.userInfo.avatar}
+                              alt={wordpressPluginBoilerplate.userInfo.username}
                             />
                             <AvatarFallback>CN</AvatarFallback>
                           </Avatar>
                         </div>
                         <div className="text-neutral-600 text-xs font-medium leading-none">
-                          {myplugin.userInfo.username}
+                          {wordpressPluginBoilerplate.userInfo.username}
                         </div>
                         <div className="text-neutral-600 text-xs font-medium leading-none">
                           <Icons.DownIcon />
