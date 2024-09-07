@@ -9,7 +9,7 @@
 
 namespace WordPressPluginBoilerplate\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Prappo\WpEloquent\Database\Eloquent\Model;
 
 /**
  * Class Users
