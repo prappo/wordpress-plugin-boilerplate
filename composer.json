@@ -4,7 +4,8 @@
   "autoload": {
     "psr-4": {
       "WordPressPluginBoilerplate\\": "includes/",
-      "WordPressPluginBoilerplate\\Database\\": "database/"
+      "WordPressPluginBoilerplate\\Database\\": "database/",
+      "WordPressPluginBoilerplate\\Libs\\": "libs/"
     },
     "files": [
       "libs/assets.php",
@@ -13,7 +14,6 @@
     ]
   },
   "require": {
-    "haruncpi/wp-api": "^1.0",
     "prappo/wp-eloquent": "^3.0"
   }
 }

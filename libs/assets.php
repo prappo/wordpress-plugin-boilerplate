@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Vite integration for WordPress
  *

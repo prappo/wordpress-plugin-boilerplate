@@ -3,7 +3,7 @@
 namespace WordPressPluginBoilerplate\Core;
 
 use WordPressPluginBoilerplate\Traits\Base;
-use Haruncpi\WpApi\ApiConfig;
+use WordPressPluginBoilerplate\Libs\API\Config;
 
 /**
  * Class API
@@ -22,7 +22,7 @@ class API {
 	 * @return void
 	 */
 	public function init() {
-		ApiConfig::set_route_file( WORDPRESS_PLUGIN_BOILERPLATE_DIR . '/includes/Routes/Api.php' )
+		Config::set_route_file( WORDPRESS_PLUGIN_BOILERPLATE_DIR . '/includes/Routes/Api.php' )
 			->set_namespace( 'WordPressPluginBoilerplate\Api' )
 			->init();
 	}

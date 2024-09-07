@@ -9,11 +9,11 @@
 
 namespace WordPressPluginBoilerplate\Routes;
 
-use Haruncpi\WpApi\ApiRoute;
+use WordPressPluginBoilerplate\Libs\API\Route;
 
-ApiRoute::prefix(
+Route::prefix(
 	WORDPRESS_PLUGIN_BOILERPLATE_ROUTE_PREFIX,
-	function ( ApiRoute $route ) {
+	function ( Route $route ) {
 
 		// Define accounts API routes.
 
