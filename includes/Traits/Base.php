@@ -1,13 +1,13 @@
 <?php
 
-namespace MyPlugin\Traits;
+namespace WordPressPluginBoilerplate\Traits;
 
 /**
  * Trait Base
  *
  * Provides a trait with a singleton pattern for obtaining an instance.
  *
- * @package MyPlugin\Trait
+ * @package WordPressPluginBoilerplate\Trait
  */
 trait Base {
 

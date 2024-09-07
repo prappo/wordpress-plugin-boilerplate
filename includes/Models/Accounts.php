@@ -2,22 +2,22 @@
 /**
  * Class Accounts
  *
- * Represents the Accounts model for MyPlugin.
+ * Represents the Accounts model for WordPressPluginBoilerplate.
  *
- * @package MyPlugin\Models
+ * @package WordPressPluginBoilerplate\Models
  * @since 1.0.0
  */
 
-namespace MyPlugin\Models;
+namespace WordPressPluginBoilerplate\Models;
 
 use Prappo\WpEloquent\Database\Eloquent\Model;
 
 /**
  * Class Accounts
  *
- * Represents the Accounts model for MyPlugin.
+ * Represents the Accounts model for WordPressPluginBoilerplate.
  *
- * @package MyPlugin\Models
+ * @package WordPressPluginBoilerplate\Models
  */
 class Accounts extends Model {
 

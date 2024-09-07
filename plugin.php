@@ -1,20 +1,20 @@
 <?php
-use MyPlugin\Core\Api;
-use MyPlugin\Admin\Menu;
-use MyPlugin\Core\Template;
-use MyPlugin\Frontend\Frontend;
-use MyPlugin\Traits\Base;
+use WordPressPluginBoilerplate\Core\Api;
+use WordPressPluginBoilerplate\Admin\Menu;
+use WordPressPluginBoilerplate\Core\Template;
+use WordPressPluginBoilerplate\Frontend\Frontend;
+use WordPressPluginBoilerplate\Traits\Base;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class MyPlugin
+ * Class WordPressPluginBoilerplate
  *
  * The main class for the Coldmailar plugin, responsible for initialization and setup.
  *
  * @since 1.0.0
  */
-final class MyPlugin {
+final class WordPressPluginBoilerplate {
 
 	use Base;
 
@@ -25,12 +25,12 @@ final class MyPlugin {
 	 * @return void
 	 */
 	public function __construct() {
-		define( 'MYPLUGIN_VERSION', '1.0.0' );
-		define( 'MYPLUGIN_PLUGIN_FILE', __FILE__ );
-		define( 'MYPLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-		define( 'MYPLUGIN_URL', plugin_dir_url( __FILE__ ) );
-		define( 'MYPLUGIN_ASSETS_URL', MYPLUGIN_URL . '/assets' );
-		define( 'MYPLUGIN_ROUTE_PREFIX', 'myplugin/v1' );
+		define( 'WORDPRESS_PLUGIN_BOILERPLATE_VERSION', '1.0.0' );
+		define( 'WORDPRESS_PLUGIN_BOILERPLATE_PLUGIN_FILE', __FILE__ );
+		define( 'WORDPRESS_PLUGIN_BOILERPLATE_DIR', plugin_dir_path( __FILE__ ) );
+		define( 'WORDPRESS_PLUGIN_BOILERPLATE_URL', plugin_dir_url( __FILE__ ) );
+		define( 'WORDPRESS_PLUGIN_BOILERPLATE_ASSETS_URL', WORDPRESS_PLUGIN_BOILERPLATE_URL . '/assets' );
+		define( 'WORDPRESS_PLUGIN_BOILERPLATE_ROUTE_PREFIX', 'wordpress-plugin-boilerplate/v1' );
 	}
 
 	/**
@@ -64,6 +64,6 @@ final class MyPlugin {
 	 * @return void
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'my-plugin', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'wordpress-plugin-boilerplate', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 }

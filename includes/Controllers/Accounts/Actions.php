@@ -1,15 +1,15 @@
 <?php
 
-namespace MyPlugin\Modules\Accounts;
+namespace WordPressPluginBoilerplate\Controllers\Accounts;
 
-use MyPlugin\Models\Accounts;
+use WordPressPluginBoilerplate\Models\Accounts;
 
 /**
  * Class Actions
  *
  * Handles account-related actions such as creation, retrieval, deletion, and update.
  *
- * @package MyPlugin\Modules\Accounts
+ * @package WordPressPluginBoilerplate\Controllers\Accounts
  */
 class Actions {
 

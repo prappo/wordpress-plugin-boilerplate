@@ -1,16 +1,23 @@
 <?php
 
-namespace MyPlugin\Core;
+namespace WordPressPluginBoilerplate\Core;
 
-use MyPlugin\Traits\Base;
+use WordPressPluginBoilerplate\Traits\Base;
 
+/**
+ * Class Template
+ *
+ * Represents the Template class for WordPressPluginBoilerplate.
+ *
+ * @package WordPressPluginBoilerplate\Core
+ */
 class Template {
 
 	use Base;
 
 	const FRONTEND_TEMPLATE      = 'frontend-template.php';
-	const FRONTEND_TEMPLATE_NAME = 'MyPlugin';
-	const FRONTEND_TEMPLATE_SLUG = 'myplugin';
+	const FRONTEND_TEMPLATE_NAME = 'WordPressPluginBoilerplate';
+	const FRONTEND_TEMPLATE_SLUG = 'wordpress-plugin-boilerplate';
 
 	/**
 	 * Initialize the class.
@@ -41,7 +48,7 @@ class Template {
 	 */
 	public function load_custom_template( $template ) {
 		if ( get_page_template_slug() === self::FRONTEND_TEMPLATE ) {
-			$template_file_dir = MYPLUGIN_DIR . 'views/templates/' . self::FRONTEND_TEMPLATE;
+			$template_file_dir = WORDPRESS_PLUGIN_BOILERPLATE_DIR . 'views/templates/' . self::FRONTEND_TEMPLATE;
 
 			if ( file_exists( $template_file_dir ) ) {
 				return $template_file_dir;

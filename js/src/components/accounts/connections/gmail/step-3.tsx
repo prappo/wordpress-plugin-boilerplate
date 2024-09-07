@@ -104,7 +104,7 @@ export default function Step3({ stepCount }: StepProps) {
 
     try {
       const response = await fetch(
-        myplugin.apiUrl + "myplugin/v1/accounts/create",
+        wordpressPluginBoilerplate.apiUrl + "myplugin/v1/accounts/create",
         {
           method: "POST",
           headers: {

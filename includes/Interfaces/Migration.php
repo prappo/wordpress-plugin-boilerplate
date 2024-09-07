@@ -1,13 +1,13 @@
 <?php
 
-namespace MyPlugin\Interface;
+namespace WordPressPluginBoilerplate\Interfaces;
 
 /**
  * Interface Migration
  *
  * Defines the contract for database migration operations.
  *
- * @package MyPlugin\Interface
+ * @package WordPressPluginBoilerplate\Interfaces
  */
 interface Migration {
 

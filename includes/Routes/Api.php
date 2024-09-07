@@ -1,28 +1,28 @@
 <?php
 /**
- * MyPlugin Routes
+ * WordPressPluginBoilerplate Routes
  *
- * Defines and registers custom API routes for the MyPlugin using the Haruncpi\WpApi library.
+ * Defines and registers custom API routes for the WordPressPluginBoilerplate using the Haruncpi\WpApi library.
  *
- * @package MyPlugin\Routes
+ * @package WordPressPluginBoilerplate\Routes
  */
 
-namespace MyPlugin\Routes;
+namespace WordPressPluginBoilerplate\Routes;
 
-use Haruncpi\WpApi\ApiRoute;
+use WordPressPluginBoilerplate\Libs\API\Route;
 
-ApiRoute::prefix(
-	MYPLUGIN_ROUTE_PREFIX,
-	function ( ApiRoute $route ) {
+Route::prefix(
+	WORDPRESS_PLUGIN_BOILERPLATE_ROUTE_PREFIX,
+	function ( Route $route ) {
 
 		// Define accounts API routes.
 
-		$route->post( '/accounts/create', '\MyPlugin\Modules\Accounts\Actions@create' );
-		$route->get( '/accounts/get', '\MyPlugin\Modules\Accounts\Actions@get' );
-		$route->post( '/accounts/delete', '\MyPlugin\Modules\Accounts\Actions@delete' );
-		$route->post( '/accounts/update', '\MyPlugin\Modules\Accounts\Actions@update' );
+		$route->post( '/accounts/create', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@create' );
+		$route->get( '/accounts/get', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@get' );
+		$route->post( '/accounts/delete', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@delete' );
+		$route->post( '/accounts/update', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@update' );
 
 		// Allow hooks to add more custom API routes.
-		do_action( 'myplugin_api', $route );
+		do_action( 'wordpress_plugin_boilerplate_api', $route );
 	}
 );

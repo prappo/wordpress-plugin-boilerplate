@@ -8,14 +8,14 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Vite + React + MyPlugin </h2>
+      <h2>Vite + React + WordPress Plugin Boilerplate </h2>
       <div className="card">
         <button onClick={increment}>count is {count}</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline">Hello WordPress!</h1>
     </div>
   );
 }

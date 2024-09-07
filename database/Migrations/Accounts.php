@@ -2,14 +2,14 @@
 /**
  * Database configuration using Eloquent ORM.
  *
- * @package MyPlugin
+ * @package WordPressPluginBoilerplate
  * @subpackage Database
  * @since 1.0.0
  */
 
-namespace MyPlugin\Database\Migrations;
+namespace WordPressPluginBoilerplate\Database\Migrations;
 
-use MyPlugin\Interface\Migration;
+use WordPressPluginBoilerplate\Interfaces\Migration;
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
 use Prappo\WpEloquent\Database\Schema\Blueprint;
 use Prappo\WpEloquent\Support\Facades\Schema;
@@ -19,7 +19,7 @@ use Prappo\WpEloquent\Support\Facades\Schema;
  *
  * Represents the migration for creating the 'accounts' table.
  *
- * @package MyPlugin\Database\Migrations
+ * @package WordPressPluginBoilerplate\Database\Migrations
  */
 class Accounts implements Migration {
 

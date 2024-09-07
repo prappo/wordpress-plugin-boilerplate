@@ -1,10 +1,10 @@
 <?php
 
-namespace MyPlugin\Core;
+namespace WordPressPluginBoilerplate\Core;
 
-use MyPlugin\Database\Migrations\Accounts;
-use MyPlugin\Database\Seeders\Accounts as SeedersAccounts;
-use MyPlugin\Traits\Base;
+use WordPressPluginBoilerplate\Database\Migrations\Accounts;
+use WordPressPluginBoilerplate\Database\Seeders\Accounts as SeedersAccounts;
+use WordPressPluginBoilerplate\Traits\Base;
 
 /**
  * This class is responsible for the functionality
@@ -33,7 +33,7 @@ class Install {
 	 * @return void
 	 */
 	private function install_pages() {
-		myplugin_install_page(
+		wordpress_plugin_boilerplate_install_page(
 			Template::FRONTEND_TEMPLATE_NAME,
 			Template::FRONTEND_TEMPLATE_SLUG,
 			Template::FRONTEND_TEMPLATE

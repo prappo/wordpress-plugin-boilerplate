@@ -2,30 +2,35 @@
 
 declare(strict_types=1);
 
-namespace MyPlugin\Frontend;
+namespace WordPressPluginBoilerplate\Frontend;
 
-use MyPlugin\Core\Template;
-use MyPlugin\Traits\Base;
-use MyPlugin\Libs\Assets;
+use WordPressPluginBoilerplate\Core\Template;
+use WordPressPluginBoilerplate\Traits\Base;
+use WordPressPluginBoilerplate\Libs\Assets;
 
 /**
  * Class Frontend
  *
- * Handles frontend functionalities for the MyPlugin.
+ * Handles frontend functionalities for the WordPressPluginBoilerplate.
  *
- * @package MyPlugin\Frontend
+ * @package WordPressPluginBoilerplate\Frontend
  */
 class Frontend {
 
 	use Base;
 
 	/**
-	 * Script handle for MyPlugin.
+	 * Script handle for WordPressPluginBoilerplate.
 	 */
-	const HANDLE = 'myplugin';
+	const HANDLE = 'wordpress-plugin-boilerplate';
 
 	/**
-	 * Development script path for MyPlugin.
+	 * JS Object name for WordPressPluginBoilerplate.
+	 */
+	const OBJ_NAME = 'wordpressPluginBoilerplate';
+
+	/**
+	 * Development script path for WordPressPluginBoilerplate.
 	 */
 	const DEV_SCRIPT = 'js/src/main.jsx';
 
@@ -35,8 +40,7 @@ class Frontend {
 	 * @var array
 	 */
 	private $allowed_screens = array(
-		'toplevel_page_myplugin',
-		'myplugin_page_myplugin-campaigns',
+		'toplevel_page_wordpress-plugin-boilerplate',
 	);
 
 	/**
@@ -71,11 +75,11 @@ class Frontend {
 
 		if ( in_array( $current_screen, $this->allowed_screens, true ) ) {
 			Assets\enqueue_asset(
-				MYPLUGIN_DIR . '/js/dist',
+				WORDPRESS_PLUGIN_BOILERPLATE_DIR . '/js/dist',
 				self::DEV_SCRIPT,
 				$this->get_config()
 			);
-			wp_localize_script( 'myplugin', 'myplugin', $this->get_data() );
+			wp_localize_script( self::HANDLE, self::OBJ_NAME, $this->get_data() );
 		}
 	}
 
@@ -117,7 +121,7 @@ class Frontend {
 		$avatar_url = '';
 
 		if ( is_user_logged_in() ) {
-			// Get current user's data.
+			// Get current user's data .
 			$current_user = wp_get_current_user();
 
 			// Get username.
