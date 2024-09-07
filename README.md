@@ -31,7 +31,9 @@ Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver
 ## Usages
 The plugin consists of two main components: the frontend, built with React, and the backend, which communicates via an API.
 
-### API
+### API Route
+
+Add your API route in `includes/Routes/Api.php`
 
 ```php
 Route::get( $prefix, $endpoint, $callback, $auth = false );
