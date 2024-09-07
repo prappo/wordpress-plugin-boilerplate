@@ -1,4 +1,4 @@
-# WordPress Plugin Boilerplate (WIP)
+# WordPress Plugin Boilerplate
 Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver your plugin with confidence!
 ## Preview
 
@@ -27,6 +27,22 @@ Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver
     
   </tr>
 </table>
+
+## Usages
+The plugin consists of two main components: the frontend, built with React, and the backend, which communicates via an API.
+
+### API
+
+```php
+Route::get( $prefix, $endpoint, $callback, $auth = false );
+Route::post( $prefix, $endpoint, $callback, $auth = false );
+
+// Route grouping.
+Route::prefix( $prefix, function( Route $route ) {
+    $route->get( $endpoint, $callback, $auth = false );
+    $route->post( $endpoint, $callback, $auth = false );
+});
+```
 
 ## Install
 

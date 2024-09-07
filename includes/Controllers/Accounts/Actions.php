@@ -1,6 +1,6 @@
 <?php
 
-namespace WordPressPluginBoilerplate\Modules\Accounts;
+namespace WordPressPluginBoilerplate\Controllers\Accounts;
 
 use WordPressPluginBoilerplate\Models\Accounts;
 
@@ -9,7 +9,7 @@ use WordPressPluginBoilerplate\Models\Accounts;
  *
  * Handles account-related actions such as creation, retrieval, deletion, and update.
  *
- * @package WordPressPluginBoilerplate\Modules\Accounts
+ * @package WordPressPluginBoilerplate\Controllers\Accounts
  */
 class Actions {
 

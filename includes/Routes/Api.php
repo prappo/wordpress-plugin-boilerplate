@@ -17,10 +17,10 @@ Route::prefix(
 
 		// Define accounts API routes.
 
-		$route->post( '/accounts/create', '\WordPressPluginBoilerplate\Modules\Accounts\Actions@create' );
-		$route->get( '/accounts/get', '\WordPressPluginBoilerplate\Modules\Accounts\Actions@get' );
-		$route->post( '/accounts/delete', '\WordPressPluginBoilerplate\Modules\Accounts\Actions@delete' );
-		$route->post( '/accounts/update', '\WordPressPluginBoilerplate\Modules\Accounts\Actions@update' );
+		$route->post( '/accounts/create', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@create' );
+		$route->get( '/accounts/get', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@get' );
+		$route->post( '/accounts/delete', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@delete' );
+		$route->post( '/accounts/update', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@update' );
 
 		// Allow hooks to add more custom API routes.
 		do_action( 'wordpress_plugin_boilerplate_api', $route );

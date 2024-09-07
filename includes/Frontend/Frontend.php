@@ -61,7 +61,7 @@ class Frontend {
 	public function enqueue_script( $screen ) {
 		$current_screen     = $screen;
 		$template_file_name = Template::FRONTEND_TEMPLATE;
-		error_log( $current_screen );
+
 		if ( ! is_admin() ) {
 			$template_slug = get_page_template_slug();
 			if ( $template_slug ) {

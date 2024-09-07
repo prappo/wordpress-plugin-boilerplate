@@ -1,9 +1,21 @@
 <?php
+/**
+ * Frontend Template
+ *
+ * This file is used to markup the public facing aspects of the plugin.
+ *
+ * @package WordPressPluginBoilerplate
+ */
 
 use WordPressPluginBoilerplate\Frontend\Frontend;
 
+
+
 /**
- * Template Name: WordPressPluginBoilerplate
+ * Remove unwanted scripts and styles.
+ *
+ * @return void
+ * @since 1.0.0
  */
 function wordpress_plugin_boilerplate_remove_unwanted_scripts_and_styles() {
 	global $wp_scripts, $wp_styles;
@@ -16,11 +28,11 @@ function wordpress_plugin_boilerplate_remove_unwanted_scripts_and_styles() {
 		}
 	}
 
-	$styles_to_keep = array( 'admin-bar', 'wp-auth-check', 'plugin-installer-style', 'colors', 'myplugin-0' );
+	$styles_to_keep = array( 'admin-bar', 'wp-auth-check', 'plugin-installer-style', 'colors', Frontend::HANDLE . '-0' );
 
 	foreach ( $wp_styles->queue as $handle ) {
 
-		if ( in_array( $handle, $styles_to_keep ) ) {
+		if ( in_array( $handle, $styles_to_keep, true ) ) {
 			continue;
 		}
 		wp_dequeue_style( $handle );
