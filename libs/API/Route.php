@@ -386,8 +386,28 @@ class Route {
 					throw new ApiRouteException( "{$route->endpoint} must have a prefix" );
 				}
 
-				register_rest_route( $route->prefix, $route->endpoint, $args );
+				$endpoint = self::convert_to_regex( $route->endpoint );
+
+				register_rest_route( $route->prefix, $endpoint, $args );
 			}
 		}
+	}
+
+	/**
+	 * Convert URL schema to regex pattern.
+	 *
+	 * @since 1.0.0
+	 */
+	private static function convert_to_regex( $url ) {
+		// Replace placeholders with regex patterns.
+		$regex = preg_replace_callback(
+			'/\{(\w+)\}/',
+			function ( $matches ) {
+				return '(?P<' . $matches[1] . '>\d+)'; // Capture numeric values.
+			},
+			$url
+		);
+
+		return $regex;
 	}
 }

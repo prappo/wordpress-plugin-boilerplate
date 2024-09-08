@@ -22,6 +22,9 @@ Route::prefix(
 		$route->post( '/accounts/delete', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@delete' );
 		$route->post( '/accounts/update', '\WordPressPluginBoilerplate\Controllers\Accounts\Actions@update' );
 
+		// Posts routes.
+		$route->get( '/posts/get', '\WordPressPluginBoilerplate\Controllers\Posts\Actions@get_all_posts' );
+		$route->get( '/posts/get/{id}', '\WordPressPluginBoilerplate\Controllers\Posts\Actions@get_post' );
 		// Allow hooks to add more custom API routes.
 		do_action( 'wordpress_plugin_boilerplate_api', $route );
 	}
