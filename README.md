@@ -45,6 +45,14 @@ Route::prefix( $prefix, function( Route $route ) {
     $route->post( $endpoint, $callback, $auth = false );
 });
 ```
+#### API Example
+```php
+// Get All posts
+$route->get( '/posts/get', '\WordPressPluginBoilerplate\Controllers\Posts\Actions@get_all_posts' );
+
+// Get Single Posts
+$route->get( '/posts/get/{id}', '\WordPressPluginBoilerplate\Controllers\Posts\Actions@get_post' );
+```
 
 ## Install
 
