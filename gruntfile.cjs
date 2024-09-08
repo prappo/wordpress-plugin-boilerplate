@@ -22,6 +22,7 @@ const distFiles = [
     '!.env',
     '!bower.json',
     '!composer.json',
+    '!plugin-config.json',
     '!composer.lock',
     '!contributing.md',
     '!docs/**',
