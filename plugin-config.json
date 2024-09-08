@@ -2,6 +2,7 @@
     "plugin_name":"WordPress Plugin Boilerplate",
     "plugin_description":"A boilerplate for WordPress plugins.",
     "plugin_version":"1.0.0",
+    "plugin_file_name":"wordpress-plugin-boilerplate.php",
     "author_name":"Prappo",
     "author_uri":"https://prappo.dev",
     "text_domain":"wordpress-plugin-boilerplate",

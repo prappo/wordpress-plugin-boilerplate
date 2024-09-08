@@ -1,6 +1,9 @@
 const grunt = require('grunt');
 const pkg = require('./package.json');
+const config = require('./plugin-config.json');
 const loadGruntTasks = require('load-grunt-tasks');
+const { version } = require('os');
+const { default: path } = require('path');
 
 // Define files to include/exclude in the release package
 const distFiles = [
@@ -56,6 +59,63 @@ const distFiles = [
 // Initialize Grunt configuration
 grunt.initConfig({
     pkg,
+    sed:{
+        version: {
+            pattern: "Version: [0-9]+\\.[0-9]+\\.[0-9]+",
+            replacement: `Version: ${config.plugin_version}`,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_plugin_file_namespace:{
+            pattern: "namespace WordPressPluginBoilerplate",
+            replacement: `namespace ${config.namespace}`,
+            recursive: false,
+            path: 'plugin.php',
+        },
+        change_plugin_file_namespace_use:{
+            pattern: "use WordPressPluginBoilerplate",
+            replacement: `use ${config.namespace}`,
+            recursive: false,
+            path: 'plugin.php',
+        },
+        change_main_file_namespace:{
+            pattern: "namespace WordPressPluginBoilerplate",
+            replacement: `namespace ${config.namespace}`,
+            recursive: false,
+            path: config.plugin_file_name,
+        },
+        change_main_file_namespace_use:{
+            pattern: "use WordPressPluginBoilerplate",
+            replacement: `use ${config.namespace}`,
+            recursive: false,
+            path: config.plugin_file_name,
+        },
+        change_includes_namespace:{
+            pattern: "namespace WordPressPluginBoilerplate",
+            replacement: `namespace ${config.namespace}`,
+            recursive: true,
+            path: 'includes',
+        },
+        change_includes_namespace_use:{
+            pattern: "use WordPressPluginBoilerplate",
+            replacement: `use ${config.namespace}`,
+            path:'includes',
+            recursive: true
+        },
+        change_libs_namespace:{
+            pattern: "namespace WordPressPluginBoilerplate",
+            replacement: `namespace ${config.namespace}`,
+            recursive: true,
+            path: 'libs',
+        },
+        change_libs_namespace_use:{
+            pattern: "use WordPressPluginBoilerplate",
+            replacement: `use ${config.namespace}`,
+            path:'libs',
+            recursive: true
+        }
+
+    },
 
     // Task to copy files to the release directory
     copy: {
@@ -109,6 +169,7 @@ loadGruntTasks(grunt);
 // Register 'release' task to copy files and create a zip archive
 grunt.registerTask('release', ['copy:main', 'compress:main', 'compress:version', 'compress:todocs', 'clean:mapFiles']);
 
+grunt.registerTask('replace', ['sed:version', 'sed:change_main_file_namespace', 'sed:change_main_file_namespace_use', 'sed:change_includes_namespace', 'sed:change_includes_namespace_use', 'sed:change_libs_namespace', 'sed:change_libs_namespace_use','sed:change_plugin_file_namespace', 'sed:change_plugin_file_namespace_use']);
 // Set linefeed style to Unix (LF)
 grunt.util.linefeed = '\n';
 
