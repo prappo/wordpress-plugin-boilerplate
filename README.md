@@ -41,7 +41,7 @@ git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
 npm install
 composer install
 ```
-## Plugin rename
+## Plugin renaming
 
 You can easly rename the plugin by changing data in `plugin-config.json` file.
 
@@ -158,21 +158,6 @@ $route->get( '/posts/get', '\WordPressPluginBoilerplate\Controllers\Posts\Action
 
 // Get Single Posts
 $route->get( '/posts/get/{id}', '\WordPressPluginBoilerplate\Controllers\Posts\Actions@get_post' );
-```
-
-## Install
-
-```bash
-git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
-```
-```bash
-cd wordpress-plugin-boilerplate
-```
-```bash
-composer install
-```
-```bash
-npm install
 ```
 
 ## Development
