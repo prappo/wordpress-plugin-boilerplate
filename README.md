@@ -41,6 +41,34 @@ git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
 npm install
 composer install
 ```
+## Plugin rename
+
+You can easly rename the plugin by changing data in `plugin-config.json` file.
+
+```json
+{
+    "plugin_name":"WordPress Plugin Boilerplate",
+    "plugin_description":"A boilerplate for WordPress plugins.",
+    "plugin_version":"1.0.0",
+    "plugin_file_name":"wordpress-plugin-boilerplate.php",
+    "author_name":"Prappo",
+    "author_uri":"https://prappo.dev",
+    "text_domain":"wordpress-plugin-boilerplate",
+    "domain_path":"/languages",
+    "main_class_name":"WordPressPluginBoilerplate",
+    "main_function_name":"wordpress_plugin_boilerplate_init",
+    "namespace":"WordPressPluginBoilerplate",
+    "plugin_prefix":"wpb",
+    "constant_prefix":"WPB"
+}
+```
+
+Then run the following command to rename the plugin
+
+```bash
+npm run rename
+```
+
 
 ## Structure
 
