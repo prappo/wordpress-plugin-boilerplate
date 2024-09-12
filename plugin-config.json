@@ -1,5 +1,5 @@
 {
-    "plugin_name":"WordPress Plugin Boilerplate",
+    "plugin_name":"WordPress Chatbot",
     "plugin_description":"A boilerplate for WordPress plugins.",
     "plugin_version":"1.0.0",
     "plugin_file_name":"wordpress-plugin-boilerplate.php",

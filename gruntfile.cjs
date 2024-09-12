@@ -88,11 +88,15 @@ grunt.registerMultiTask('sed', 'Search and replace.', function() {
   });
   
 
-
-
 // Initialize Grunt configuration
 grunt.initConfig({
     pkg,
+    move: {
+        rename_plugin_file: {
+          src: 'wordpress-plugin-boilerplate.php',
+          dest: config.plugin_file_name
+        }
+      },
     sed:{
         version: {
             pattern: "Version: [0-9]+\\.[0-9]+\\.[0-9]+",
@@ -251,6 +255,7 @@ loadGruntTasks(grunt);
 grunt.registerTask('release', ['copy:main', 'compress:main', 'compress:version', 'compress:todocs', 'clean:mapFiles']);
 
 grunt.registerTask('rename', [
+    'move:rename_plugin_file',
     'sed:version', 
     'sed:change_main_file_namespace', 
     'sed:change_main_file_namespace_use', 
