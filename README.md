@@ -28,8 +28,86 @@ Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver
   </tr>
 </table>
 
-## Usages
+## Get Started
 The plugin consists of two main components: the frontend, built with React, and the backend, which communicates via an API.
+
+## Clone the repository
+```bash
+git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
+```
+
+## Install dependencies
+```bash
+npm install
+composer install
+```
+
+## Structure
+
+<details>
+  <summary><strong>📂 root-directory /</strong></summary>
+  <ul>
+    <li>
+    <details>
+    <summary><strong>📂 config</strong></summary>
+    <summary>
+      <ul>
+        <li><summary><strong>📄 plugin.php</strong></summary></li>
+      </ul>
+    </summary>
+    </details>
+    </li>
+    <li>
+    <details>
+    <summary><strong>📂 database</strong></summary>
+    <summary>
+      <ul>
+        <li>
+        <details>
+        <summary><strong>📂 Migrations</strong></summary>
+        <ul>
+          <li><summary><strong>📄 create_posts_table.php</strong></summary></li>
+          <li><summary><strong>📄 create_users_table.php</strong></summary></li>
+        </ul>
+        </details>
+        </li>
+        <li>
+        <details>
+        <summary><strong>📂 Seeders</strong></summary>
+        <ul>
+          <li><summary><strong>📄 PostSeeder.php</strong></summary></li>
+          <li><summary><strong>📄 UserSeeder.php</strong></summary></li>
+        </ul>
+        </details>
+        </li>
+      </ul>
+    </summary>
+    </details>
+    </li>
+    <li><details>
+    <summary><strong>📂 includes</strong></summary>
+    <ul>
+      <li><summary><strong>📂 Admin</strong></summary></li>
+      <li><summary><strong>📂 Controllers</strong></summary></li>
+      <li><summary><strong>📂 Core</strong></summary></li>
+      <li><summary><strong>📂 Frontend</strong></summary></li>
+      <li><summary><strong>📂 Interfaces</strong></summary></li>
+      <li><summary><strong>📂 Models</strong></summary></li>
+      <li><summary><strong>📂 Routes</strong></summary></li>
+      <li><summary><strong>📂 Traits</strong></summary></li>
+      <li><summary><strong>📄 functions.php</strong></summary></li>
+    </ul>
+    </details>
+    </li>
+    <li><summary><strong>📂 js</strong></summary></li>
+    <li><summary><strong>📂 libs</strong></summary></li>
+    <li><summary><strong>📂 views</strong></summary></li>
+    <li><summary><strong>📂 vendor</strong></summary></li>
+    <li><summary><strong> 📄 plugin.php</strong></summary></li>
+    <li><summary><strong> 📄 uninstall.php</strong></summary></li>
+    <li><summary><strong> 📄 wordpress-plugin-boilerplate.php</strong></summary></li>
+  </ul>
+</details>
 
 ### API Route
 
