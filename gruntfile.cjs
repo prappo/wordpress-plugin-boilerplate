@@ -129,6 +129,12 @@ grunt.initConfig({
             path: config.plugin_file_name,
             recursive: false
         },
+        change_plugin_text_domain:{
+            pattern: "Text Domain: wordpress-plugin-boilerplate",
+            replacement: `Text Domain: ${config.text_domain}`,
+            path: config.plugin_file_name,
+            recursive: false
+        },
         change_composer_namespace:{
             pattern: "WordPressPluginBoilerplate",
             replacement: config.namespace,
@@ -253,8 +259,20 @@ grunt.initConfig({
             "_n_noop:1,2,3d",
             "_nx_noop:1,2,3c,4d",
             "wp_set_script_translations:1,2d",
+            "load_plugin_textdomain:1d,2,3",
             ],
         },
+        files: {
+            src: [
+              "includes/**/*.php",
+              "includes/function.php",
+              "views/*.php",
+              config.plugin_file_name,
+              "uninstall.php",
+              "plugin.php",
+            ],
+            expand: true,
+          },
     },
 
     // Task to copy files to the release directory
@@ -313,6 +331,7 @@ grunt.registerTask('rename', [
     'move:rename_plugin_file',
     'sed:change_plugin_name',
     'sed:change_plugin_description',
+    'sed:change_plugin_text_domain',
     'sed:change_author_name',
     'sed:change_author_uri',
     'sed:change_version', 
@@ -332,9 +351,10 @@ grunt.registerTask('rename', [
     'sed:change_functions_prefix', 
     'sed:change_main_class_name', 
     'sed:change_main_function_name', 
-    'sed:change_constant_prefix',
-    'checktextdomain'
+    'sed:change_constant_prefix'
 ]);
+
+grunt.registerTask('change-text-domain', ['checktextdomain']);
 // Set linefeed style to Unix (LF)
 grunt.util.linefeed = '\n';
 

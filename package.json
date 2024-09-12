@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "release": "npm run build && grunt release",
-    "rename": "grunt rename --force && composer dump-autoload",
+    "rename": "grunt rename --force && npm run change-text-domain && composer dump-autoload",
+    "change-text-domain": "grunt change-text-domain --force",
     "i18n": "wp i18n make-pot . languages/wordpress-plugin-boilerplate.pot --domain=wordpress-plugin-boilerplate --exclude='*/js/*,build'"
   },
   "devDependencies": {
