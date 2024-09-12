@@ -11,6 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "release": "npm run build && grunt release",
+    "rename": "grunt rename --force && npm run change-text-domain && composer dump-autoload",
+    "change-text-domain": "grunt change-text-domain --force",
     "i18n": "wp i18n make-pot . languages/wordpress-plugin-boilerplate.pot --domain=wordpress-plugin-boilerplate --exclude='*/js/*,build'"
   },
   "devDependencies": {
@@ -38,6 +40,7 @@
     "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-compress": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-move": "^2.0.0",
     "grunt-wp-i18n": "^1.0.3",
     "load-grunt-tasks": "^5.1.0",
     "npm-run-all": "^4.1.5",
@@ -47,6 +50,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "replace": "^1.2.2",
     "rollup-plugin-external-globals": "^0.8.0",
     "storybook": "^7.5.2",
     "tailwindcss": "^3.3.5",
