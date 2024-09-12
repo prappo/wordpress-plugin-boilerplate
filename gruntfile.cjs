@@ -4,6 +4,7 @@ const config = require('./plugin-config.json');
 const loadGruntTasks = require('load-grunt-tasks');
 const { version } = require('os');
 const { default: path } = require('path');
+const { recursive } = require('replace/bin/shared-options');
 
 // Define files to include/exclude in the release package
 const distFiles = [
@@ -98,7 +99,31 @@ grunt.initConfig({
         }
       },
     sed:{
-        version: {
+        change_plugin_name:{
+            pattern: "WordPress Plugin Boilerplate",
+            replacement: config.plugin_name,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_plugin_description:{
+            pattern: "A boilerplate for WordPress plugins.",
+            replacement: config.plugin_description,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_author_name:{
+            pattern: "Prappo",
+            replacement: config.author_name,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_author_uri:{
+            pattern: "https://prappo.dev",
+            replacement: config.author_uri,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_version: {
             pattern: "Version: [0-9]+\\.[0-9]+\\.[0-9]+",
             replacement: `Version: ${config.plugin_version}`,
             path: config.plugin_file_name,
@@ -161,7 +186,7 @@ grunt.initConfig({
         change_main_class_name:{
             pattern: "WordPressPluginBoilerplate",
             replacement: config.main_class_name,
-            path: config.plugin_file_name,
+            path: [config.plugin_file_name, 'plugin.php'],
             recursive: false
         },
         change_main_function_name:{
@@ -173,7 +198,7 @@ grunt.initConfig({
         change_constant_prefix:{
             pattern: "WORDPRESS_PLUGIN_BOILERPLATE_",
             replacement: config.constant_prefix + "_",
-            path: [config.plugin_file_name, 'includes'],
+            path: [config.plugin_file_name, 'includes','plugin.php'],
             recursive: true
         }
     },
@@ -256,7 +281,11 @@ grunt.registerTask('release', ['copy:main', 'compress:main', 'compress:version',
 
 grunt.registerTask('rename', [
     'move:rename_plugin_file',
-    'sed:version', 
+    'sed:change_plugin_name',
+    'sed:change_plugin_description',
+    'sed:change_author_name',
+    'sed:change_author_uri',
+    'sed:change_version', 
     'sed:change_main_file_namespace', 
     'sed:change_main_file_namespace_use', 
     'sed:change_includes_namespace', 
@@ -268,7 +297,9 @@ grunt.registerTask('rename', [
     'sed:change_functions_prefix', 
     'sed:change_main_class_name', 
     'sed:change_main_function_name', 
-    'sed:change_constant_prefix','checktextdomain']);
+    'sed:change_constant_prefix',
+    'checktextdomain'
+]);
 // Set linefeed style to Unix (LF)
 grunt.util.linefeed = '\n';
 
