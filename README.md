@@ -44,8 +44,8 @@ composer install
 
 ## Structure
 
-<details>
-  <summary><strong>📂 root-directory /</strong></summary>
+<details open>
+  <summary><strong>📂 wordpress-plugin-boilerplate</strong></summary>
   <ul>
     <li>
     <details>
