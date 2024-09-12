@@ -8,7 +8,7 @@
     "text_domain":"wordpress-plugin-boilerplate",
     "domain_path":"/languages",
     "main_class_name":"WordPressPluginBoilerplate",
-    "mainn_function_name":"wordpress_plugin_boilerplate_init",
+    "main_function_name":"wordpress_plugin_boilerplate_init",
     "namespace":"WordPressPluginBoilerplate",
     "plugin_prefix":"wpb",
     "constant_prefix":"WPB"

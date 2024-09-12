@@ -56,6 +56,40 @@ const distFiles = [
     '!js/dist/assets/**/*.js.map',
 ];
 
+// Replace functionality
+var replace = require('replace')
+    , _ = grunt.util._
+    , log = grunt.log;
+
+grunt.registerMultiTask('sed', 'Search and replace.', function() {
+    var data = this.data;
+
+    if (!data.pattern) {
+      log.error('Missing pattern property.');
+      return;
+    }
+
+    if (_.isUndefined(data.replacement)) {
+      log.error('Missing replacement property.');
+      return;
+    }
+
+    data.path = data.path || '.';
+
+    replace({
+      regex: data.pattern
+    , replacement: data.replacement
+    , paths: _.isArray(data.path) ? data.path : [data.path]
+    , recursive: data.recursive
+    , quiet: grunt.option('verbose') ? false : true
+    , silent: false
+    , async: false
+    });
+  });
+  
+
+
+
 // Initialize Grunt configuration
 grunt.initConfig({
     pkg,
@@ -113,8 +147,55 @@ grunt.initConfig({
             replacement: `use ${config.namespace}`,
             path:'libs',
             recursive: true
+        },
+        change_functions_prefix:{
+            pattern: "wordpress_plugin_boilerplate_",
+            replacement: `${config.plugin_prefix}_`,
+            path: 'includes/functions.php',
+            recursive: false
+        },
+        change_main_class_name:{
+            pattern: "WordPressPluginBoilerplate",
+            replacement: config.main_class_name,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_main_function_name:{
+            pattern: "wordpress_plugin_boilerplate_init",
+            replacement: config.main_function_name,
+            path: config.plugin_file_name,
+            recursive: false
+        },
+        change_constant_prefix:{
+            pattern: "WORDPRESS_PLUGIN_BOILERPLATE_",
+            replacement: config.constant_prefix + "_",
+            path: [config.plugin_file_name, 'includes'],
+            recursive: true
         }
+    },
 
+    checktextdomain: {
+        options: {
+          text_domain: config.text_domain,
+          correct_domain: true,
+          keywords: [
+            "__:1,2d",
+            "_e:1,2d",
+            "_x:1,2c,3d",
+            "esc_html__:1,2d",
+            "esc_html_e:1,2d",
+            "esc_html_x:1,2c,3d",
+            "esc_attr__:1,2d",
+            "esc_attr_e:1,2d",
+            "esc_attr_x:1,2c,3d",
+            "_ex:1,2c,3d",
+            "_n:1,2,4d",
+            "_nx:1,2,4c,5d",
+            "_n_noop:1,2,3d",
+            "_nx_noop:1,2,3c,4d",
+            "wp_set_script_translations:1,2d",
+            ],
+        },
     },
 
     // Task to copy files to the release directory
@@ -169,7 +250,20 @@ loadGruntTasks(grunt);
 // Register 'release' task to copy files and create a zip archive
 grunt.registerTask('release', ['copy:main', 'compress:main', 'compress:version', 'compress:todocs', 'clean:mapFiles']);
 
-grunt.registerTask('replace', ['sed:version', 'sed:change_main_file_namespace', 'sed:change_main_file_namespace_use', 'sed:change_includes_namespace', 'sed:change_includes_namespace_use', 'sed:change_libs_namespace', 'sed:change_libs_namespace_use','sed:change_plugin_file_namespace', 'sed:change_plugin_file_namespace_use']);
+grunt.registerTask('rename', [
+    'sed:version', 
+    'sed:change_main_file_namespace', 
+    'sed:change_main_file_namespace_use', 
+    'sed:change_includes_namespace', 
+    'sed:change_includes_namespace_use', 
+    'sed:change_libs_namespace', 
+    'sed:change_libs_namespace_use',
+    'sed:change_plugin_file_namespace', 
+    'sed:change_plugin_file_namespace_use', 
+    'sed:change_functions_prefix', 
+    'sed:change_main_class_name', 
+    'sed:change_main_function_name', 
+    'sed:change_constant_prefix','checktextdomain']);
 // Set linefeed style to Unix (LF)
 grunt.util.linefeed = '\n';
 
