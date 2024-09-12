@@ -31,6 +31,8 @@ Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver
 ## Get Started
 The plugin consists of two main components: the frontend, built with React, and the backend, which communicates via an API.
 
+To get started, you need to clone the repository and install the dependencies. Then you can rename the plugin and start development. It's that simple!
+
 ## Clone the repository
 ```bash
 git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
