@@ -129,6 +129,12 @@ grunt.initConfig({
             path: config.plugin_file_name,
             recursive: false
         },
+        change_composer_namespace:{
+            pattern: "WordPressPluginBoilerplate",
+            replacement: config.namespace,
+            path: 'composer.json',
+            recursive: false
+        },
         change_plugin_file_namespace:{
             pattern: "namespace WordPressPluginBoilerplate",
             replacement: `namespace ${config.namespace}`,
@@ -165,6 +171,30 @@ grunt.initConfig({
             path:'includes',
             recursive: true
         },
+        change_includes_namespace_in_use:{
+            pattern: "WordPressPluginBoilerplate",
+            replacement: `${config.namespace}`,
+            path:'includes',
+            recursive: true
+        },
+        change_database_namespace:{
+            pattern: "namespace WordPressPluginBoilerplate",
+            replacement: `namespace ${config.namespace}`,
+            recursive: true,
+            path: 'database',
+        },
+        change_database_namespace_in_use:{
+            pattern: "WordPressPluginBoilerplate",
+            replacement: `${config.namespace}`,
+            path:'database',
+            recursive: true
+        },
+        change_database_namespace_use:{
+            pattern: "use WordPressPluginBoilerplate",
+            replacement: `use ${config.namespace}`,
+            path:'database',
+            recursive: true
+        },
         change_libs_namespace:{
             pattern: "namespace WordPressPluginBoilerplate",
             replacement: `namespace ${config.namespace}`,
@@ -180,8 +210,8 @@ grunt.initConfig({
         change_functions_prefix:{
             pattern: "wordpress_plugin_boilerplate_",
             replacement: `${config.plugin_prefix}_`,
-            path: 'includes/functions.php',
-            recursive: false
+            path: 'includes',
+            recursive: true
         },
         change_main_class_name:{
             pattern: "WordPressPluginBoilerplate",
@@ -286,10 +316,15 @@ grunt.registerTask('rename', [
     'sed:change_author_name',
     'sed:change_author_uri',
     'sed:change_version', 
+    'sed:change_composer_namespace',
     'sed:change_main_file_namespace', 
     'sed:change_main_file_namespace_use', 
     'sed:change_includes_namespace', 
     'sed:change_includes_namespace_use', 
+    'sed:change_includes_namespace_in_use',
+    'sed:change_database_namespace', 
+    'sed:change_database_namespace_in_use', 
+    'sed:change_database_namespace_use', 
     'sed:change_libs_namespace', 
     'sed:change_libs_namespace_use',
     'sed:change_plugin_file_namespace', 
