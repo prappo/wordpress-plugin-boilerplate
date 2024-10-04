@@ -1,4 +1,4 @@
-export default function PropovoiceLogo() {
+export default function Logo() {
   return (
     <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.52 122.523">
     <g fill="#464342">
