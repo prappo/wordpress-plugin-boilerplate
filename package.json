@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:server": "concurrently \"vite\" \"npx @wp-now/wp-now start\"",
     "build": "vite build",
     "preview": "vite preview",
     "format:check": "prettier --check .",
@@ -33,6 +34,7 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^4.1.0",
     "autoprefixer": "^10.4.16",
+    "concurrently": "^9.0.1",
     "eslint": "^8.52.0",
     "eslint-plugin-storybook": "^0.6.15",
     "grunt": "^1.6.1",

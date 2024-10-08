@@ -167,6 +167,11 @@ $route->get( '/posts/get/{id}', '\WordPressPluginBoilerplate\Controllers\Posts\A
 ```bash
 npm run dev
 ```
+## Development with server
+
+```bash
+npm run dev:server
+```
 
 ## Build
 
