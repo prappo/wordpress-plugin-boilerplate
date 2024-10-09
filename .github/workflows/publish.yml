@@ -29,7 +29,8 @@ jobs:
       - name: Build with Next.js 🏗️
         run: |
           cd documentation
-          npx next build
+          npm install
+          npm run build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
