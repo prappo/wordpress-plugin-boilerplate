@@ -2,7 +2,7 @@
 Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver your plugin with confidence!
 ## Preview
 
-<a href='https://prappo.github.io/wordpress-plugin-boilerplate/' target="_blank"><img alt='Wordpress' src='https://img.shields.io/badge/Live_Preview-100000?style=for-the-badge&logo=Wordpress&logoColor=white&labelColor=21759B&color=21759B'/></a>
+<a href='https://prappo.github.io/wordpress-plugin-boilerplate/preview' target="_blank"><img alt='Wordpress' src='https://img.shields.io/badge/Live_Preview-100000?style=for-the-badge&logo=Wordpress&logoColor=white&labelColor=21759B&color=21759B'/></a>
 
 ### Screenshots
 

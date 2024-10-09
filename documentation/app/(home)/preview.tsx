@@ -30,7 +30,7 @@ export default function PreviewPage() {
               step: 'installPlugin',
               pluginZipFile: {
                 resource: 'url',
-                url: 'http://localhost:3000/wordpress-plugin-boilerplate/plugin/wordpress-plugin-boilerplate.zip',
+                url: 'https://github.com/prappo/wordpress-plugin-boilerplate/raw/refs/heads/main/documentation/public/plugin/wordpress-plugin-boilerplate.zip',
               },
             },
           ],
