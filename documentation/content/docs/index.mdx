@@ -1,0 +1,87 @@
+---
+title: Get Started
+description: Get started with the Wordpress Plugin Boilerplate
+---
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+
+The plugin consists of two main components: the frontend, built with React, and the backend, which communicates via an API.
+
+To get started, you need to clone the repository and install the dependencies. Then you can rename the plugin and start development. It's that simple!
+
+## Clone the repository
+
+<Tabs items={['bash']}>
+    <Tab value="bash">
+  ```bash
+  git clone https://github.com/wp-plugin-boilerplate/wp-plugin-boilerplate.git
+  ```
+    </Tab>
+</Tabs>
+
+
+## Install the dependencies
+
+<Tabs items={['bash']}>
+    <Tab value="bash">
+```bash
+npm install
+composer install
+```
+    </Tab>
+</Tabs>
+
+## Rename the plugin
+
+You can easly rename the plugin by changing data in `plugin-config.json` file.
+
+
+```json title="plugin-config.json"
+{
+  "plugin_name": "WordPress Plugin Boilerplate",
+  "plugin_description": "A boilerplate for WordPress plugins.",
+  "plugin_version": "1.0.0",
+  "plugin_file_name": "wordpress-plugin-boilerplate.php",
+  "author_name": "Prappo",
+  "author_uri": "https://prappo.dev",
+  "text_domain": "wordpress-plugin-boilerplate",
+  "domain_path": "/languages",
+  "main_class_name": "WordPressPluginBoilerplate",
+  "main_function_name": "wordpress_plugin_boilerplate_init",
+  "namespace": "WordPressPluginBoilerplate",
+  "plugin_prefix": "wpb",
+  "constant_prefix": "WPB"
+}
+```
+
+
+Then run the following command to rename the plugin files:
+
+<Tabs items={['bash']}>
+    <Tab value="bash">
+```bash
+npm run rename
+``` 
+    </Tab>
+</Tabs>
+
+## Start the development
+
+<Tabs items={['bash']}>
+    <Tab value="bash">
+```bash
+npm run dev
+```
+</Tab>
+</Tabs>
+
+## Start the development with WordPress backend
+
+<Tabs items={['bash']}>
+    <Tab value="bash">
+```bash
+npm run dev:server
+```
+    </Tab>
+</Tabs>
+

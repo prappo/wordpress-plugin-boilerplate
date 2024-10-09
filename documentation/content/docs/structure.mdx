@@ -1,0 +1,44 @@
+---
+title: Structure
+description: Folder and file structure
+---
+
+## Base Structure
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+<Files>
+  <Folder name="wordpress-plugin-boilerplate" defaultOpen>
+    <Folder name="config">
+      <File name="plugin.php" />
+    </Folder>
+    <Folder name="database">
+      <Folder name="Migrations">
+        <File name="create_posts_table.php" />
+        <File name="create_users_table.php" />
+      </Folder>
+      <Folder name="Seeders">
+        <File name="PostSeeder.php" />
+        <File name="UserSeeder.php" />
+      </Folder>
+    </Folder>
+    <Folder name="includes">
+      <Folder name="Admin" />
+      <Folder name="Controllers" />
+      <Folder name="Core" />
+      <Folder name="Frontend" />
+      <Folder name="Interfaces" />
+      <Folder name="Models" />
+      <Folder name="Routes" />
+      <Folder name="Traits" />
+      <File name="functions.php" />
+    </Folder>
+    <Folder name="js" />
+    <Folder name="libs" />
+    <Folder name="views" />
+    <Folder name="vendor" />
+    <File name="plugin.php" />
+    <File name="uninstall.php" />
+    <File name="wordpress-plugin-boilerplate.php" />
+  </Folder>
+</Files>
