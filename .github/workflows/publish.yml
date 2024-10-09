@@ -2,11 +2,7 @@ name: publish-to-github-pages
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
-  workflow_dispatch:
+      - main
 
 permissions:
   contents: write
