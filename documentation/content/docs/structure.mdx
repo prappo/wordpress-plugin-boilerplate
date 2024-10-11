@@ -23,7 +23,7 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
       </Folder>
     </Folder>
     <Folder name="includes">
-      <Folder name="Admin" />
+      <Folder name="Admin"><File name="Menu.php" /></Folder>
       <Folder name="Controllers" />
       <Folder name="Core" />
       <Folder name="Frontend" />
@@ -33,7 +33,18 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
       <Folder name="Traits" />
       <File name="functions.php" />
     </Folder>
-    <Folder name="js" />
+    <Folder name="js">
+      <Folder name="src">
+        <Folder name="components" />
+        <Folder name="pages" />
+        <Folder name="lib" />
+        <Folder name="types" />
+        <File name="App.jsx" />
+        <File name="main.jsx" />
+        <File name="index.css" />
+        <File name="router.jsx" />
+      </Folder>
+    </Folder>
     <Folder name="libs" />
     <Folder name="views" />
     <Folder name="vendor" />
@@ -42,3 +53,62 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
     <File name="wordpress-plugin-boilerplate.php" />
   </Folder>
 </Files>
+
+## Detailed Explanation
+
+### Root Directory
+
+The root directory contains the main plugin files:
+
+- `plugin.php`: Initializes the plugin and includes necessary files.
+- `uninstall.php`: Contains code that runs when the plugin is uninstalled.
+- `wordpress-plugin-boilerplate.php`: The primary plugin file that WordPress uses to identify and load the plugin.
+
+### Config
+
+The `config` directory stores configuration files:
+
+- `plugin.php`: Contains plugin-wide configuration settings and constants.
+
+### Database
+
+The `database` directory manages database-related operations:
+
+- **Migrations**: Contains files for creating and modifying database tables.
+- **Seeders**: Includes files for populating the database with initial data.
+
+### Includes
+
+The `includes` directory contains the core functionality of the plugin:
+
+- **Admin**: Handles admin-specific functionality.
+- **Controllers**: Contains classes for handling various plugin actions.
+- **Core**: Houses core plugin classes and functionality.
+- **Frontend**: Manages frontend-specific functionality and display.
+- **Interfaces**: Defines interfaces used throughout the plugin.
+- **Models**: Contains classes for interacting with the database.
+- **Routes**: Manages custom routes and endpoints for the plugin.
+- **Traits**: Stores reusable trait files.
+- `functions.php`: Contains utility functions used throughout the plugin.
+
+### JavaScript (js)
+
+The `js` directory manages the JavaScript and React components:
+
+- **src**: Contains the source files for the JavaScript application.
+  - **components**: Reusable React components.
+  - **pages**: React components for specific pages or views.
+  - **lib**: Utility functions and helper libraries.
+  - **types**: TypeScript type definitions (if using TypeScript).
+  - `App.jsx`: The main React application component.
+  - `main.jsx`: The entry point for the React application.
+  - `index.css`: Global CSS styles.
+  - `router.jsx`: Manages routing for the React application.
+
+### Additional Directories
+
+- **libs**: Contains third-party libraries or custom libraries.
+- **views**: Stores template files for rendering HTML output.
+- **vendor**: Managed by Composer, contains third-party dependencies.
+
+This structure provides a solid foundation for building scalable and maintainable WordPress plugins, following modern development practices and separation of concerns.

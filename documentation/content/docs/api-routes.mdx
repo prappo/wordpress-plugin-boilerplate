@@ -1,0 +1,35 @@
+---
+title: API Routes
+description: API Routes for the Wordpress Plugin Boilerplate
+---
+
+## Route Define
+
+Open `includes/Routes/Api.php` file and write route
+
+### Structure
+
+```php title="includes/Routes/Api.php"
+Route::method( 'your-prefix', 'your-endpoint', 'your-callback', $auth = false );
+```
+
+### Syntax
+
+```php title="includes/Routes/Api.php"
+
+Route::get( $prefix, $endpoint, $callback, $auth = false );
+Route::post( $prefix, $endpoint, $callback, $auth = false );
+
+// Multiple route in a prefix group.
+Route::prefix( $prefix, function( Route $route ) {
+    $route->get( $endpoint, $callback, $auth = false );
+    $route->post( $endpoint, $callback, $auth = false );
+});
+
+```
+
+### How to use
+
+
+
+
