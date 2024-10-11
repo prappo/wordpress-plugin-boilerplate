@@ -26,7 +26,7 @@ export default function HomePage() {
               <FaGithub className="mr-2" />
               GitHub
             </Link>
-            <Link href="/preview" className="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-md font-semibold transition duration-300 flex items-center">
+            <Link href="/preview" className="bg-white hover:bg-gray-100 dark:hover:bg-gray-200 text-blue-600 dark:text-blue-800 px-8 py-3 rounded-md font-semibold transition duration-300 flex items-center">
               <FaEye className="mr-2" />
               Live Preview
             </Link>
@@ -70,6 +70,33 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* New Screenshots Section */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Screenshots</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ScreenshotCard
+              src="/wordpress-plugin-boilerplate/artworks/images/dashboard-light.png"
+              alt="Dashboard Light Mode"
+              title="Dashboard - Light Mode"
+            />
+            <ScreenshotCard
+              src="/wordpress-plugin-boilerplate/artworks/images/dashboard-dark.png"
+              alt="Dashboard Dark Mode"
+              title="Dashboard - Dark Mode"
+            />
+            <ScreenshotCard
+              src="/wordpress-plugin-boilerplate/artworks/images/settings-light.png"
+              alt="Settings Light Mode"
+              title="Settings - Light Mode"
+            />
+            <ScreenshotCard
+              src="/wordpress-plugin-boilerplate/artworks/images/settings-dark.png"
+              alt="Settings Dark Mode"
+              title="Settings - Dark Mode"
+            />
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="text-center bg-blue-600 dark:bg-blue-800 text-white py-16 rounded-lg">
           <h2 className="text-3xl font-bold mb-4">Ready to build your WordPress plugin?</h2>
@@ -83,7 +110,7 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <div className="flex items-center mb-4">
@@ -91,6 +118,15 @@ function FeatureCard({ icon, title, description }) {
         <h3 className="text-xl font-semibold ml-4">{title}</h3>
       </div>
       <p className="text-gray-600 dark:text-gray-300">{description}</p>
+    </div>
+  );
+}
+
+function ScreenshotCard({ src, alt, title }: { src: string; alt: string; title: string }) {
+  return (
+    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+      <img src={src} alt={alt} className="w-full h-auto rounded-lg mb-4" />
+      <h3 className="text-xl font-semibold text-center">{title}</h3>
     </div>
   );
 }
