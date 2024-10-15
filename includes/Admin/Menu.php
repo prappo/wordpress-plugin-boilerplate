@@ -51,9 +51,9 @@ class Menu {
 
 		$plugin_url = admin_url( '/admin.php?page=' . $this->parent_slug );
 
-		if ( isset( $_GET['page'] )
-		&& ( $_GET['page'] === $this->parent_slug
-		|| $_GET['page'] === $this->parent_slug . '/' ) ) {
+		$current_page = get_admin_page_parent();
+
+		if ( $current_page === $this->parent_slug ) {
 			$plugin_url = '';
 		}
 
