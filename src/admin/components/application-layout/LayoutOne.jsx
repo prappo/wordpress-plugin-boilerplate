@@ -24,7 +24,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../Icons/Logo";
 import { clsx } from "clsx";
-import UpgradeProCard from "@/components/misc/UpgradeProCard"
+
 
 const navigation = [
     {
@@ -104,9 +104,7 @@ export default function LayoutOne() {
 
                         </nav>
                     </div>
-                    <div className="mt-auto p-4">
-                        <UpgradeProCard />
-                    </div>
+                
                 </div>
             </div>
             }
@@ -153,9 +151,7 @@ export default function LayoutOne() {
 
 
                             </nav>
-                            <div className="mt-auto">
-                                <UpgradeProCard />
-                            </div>
+                          
                         </SheetContent>
                     </Sheet>
                     <div className="w-full flex items-center h-full">

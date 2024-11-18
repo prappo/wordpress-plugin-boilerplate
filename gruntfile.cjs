@@ -56,6 +56,7 @@ const distFiles = [
     '!postcss.config.js',
     '!components.json',
     '!js/dist/assets/**/*.js.map',
+    '!assets/admin/dist/**/*.js.map',
 ];
 
 // Replace functionality

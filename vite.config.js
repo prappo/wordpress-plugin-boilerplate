@@ -5,15 +5,15 @@ import path from "path"
 export default {
   plugins: [
     v4wp({
-      input: "js/src/main.jsx",
-      outDir: "js/dist",
+      input: "src/admin/main.jsx",
+      outDir: "assets/admin/dist",
     }),
     // wp_scripts(),
     react(),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./js/src"),
+      "@": path.resolve(__dirname, "./src/admin"),
     },
   },
 };

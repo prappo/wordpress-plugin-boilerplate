@@ -32,7 +32,7 @@ class Frontend {
 	/**
 	 * Development script path for WordPressPluginBoilerplate.
 	 */
-	const DEV_SCRIPT = 'js/src/main.jsx';
+	const DEV_SCRIPT = 'src/admin/main.jsx';
 
 	/**
 	 * List of allowed screens for script enqueue.
@@ -75,7 +75,7 @@ class Frontend {
 
 		if ( in_array( $current_screen, $this->allowed_screens, true ) ) {
 			Assets\enqueue_asset(
-				WORDPRESS_PLUGIN_BOILERPLATE_DIR . '/js/dist',
+				WORDPRESS_PLUGIN_BOILERPLATE_DIR . '/assets/admin/dist',
 				self::DEV_SCRIPT,
 				$this->get_config()
 			);

@@ -1,11 +1,11 @@
 {
-  "include": ["vite.config.js", "js/**/*"],
+  "include": ["vite.config.js", "src/**/*"],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./js/src/*"
+        "./src/admin/*"
       ]
     },
     "checkJs": true,
