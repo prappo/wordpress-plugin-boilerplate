@@ -129,7 +129,15 @@ npm run rename
     </ul>
     </details>
     </li>
-    <li><summary><strong>📂 js</strong></summary></li>
+    <li><details>
+    <summary><strong>📂 src</strong></summary>
+    <ul>
+      <li><summary><strong>📂 admin</strong></summary></li>
+      <li><summary><strong>📂 frontend</strong></summary></li>
+      <li><summary><strong>📂 blocks</strong></summary></li>
+    </ul>
+    </details>
+    </li>
     <li><summary><strong>📂 libs</strong></summary></li>
     <li><summary><strong>📂 views</strong></summary></li>
     <li><summary><strong>📂 vendor</strong></summary></li>
