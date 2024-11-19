@@ -314,7 +314,7 @@ grunt.initConfig({
         todocs: {
             options: {
                 mode: 'zip',
-                archive: `./documentation/plugin/wordpress-plugin-boilerplate.zip`,
+                archive: `./documentation/public/plugin/wordpress-plugin-boilerplate.zip`,
             },
             expand: true,
             src: distFiles,
