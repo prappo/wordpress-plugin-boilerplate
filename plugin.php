@@ -2,7 +2,8 @@
 use WordPressPluginBoilerplate\Core\Api;
 use WordPressPluginBoilerplate\Admin\Menu;
 use WordPressPluginBoilerplate\Core\Template;
-use WordPressPluginBoilerplate\Frontend\Frontend;
+use WordPressPluginBoilerplate\Assets\Frontend;
+use WordPressPluginBoilerplate\Assets\Admin;
 use WordPressPluginBoilerplate\Traits\Base;
 
 defined( 'ABSPATH' ) || exit;
@@ -44,6 +45,7 @@ final class WordPressPluginBoilerplate {
 	public function init() {
 		if ( is_admin() ) {
 			Menu::get_instance()->init();
+			Admin::get_instance()->bootstrap();
 		}
 
 		// Initialze core functionalities.

@@ -7,7 +7,7 @@
  * @package WordPressPluginBoilerplate
  */
 
-use WordPressPluginBoilerplate\Frontend\Frontend;
+use WordPressPluginBoilerplate\Assets\Frontend;
 
 
 
@@ -49,7 +49,7 @@ add_action( 'wp_enqueue_scripts', 'wordpress_plugin_boilerplate_remove_unwanted_
 wp_head();
 
 ?>
-<div id="myplugin" class="myplugin-app"></div>
+<div id="myplugin-frontend" class="myplugin-app"></div>
 <?php
 
 wp_footer();

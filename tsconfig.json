@@ -1,5 +1,5 @@
 {
-  "include": ["vite.config.js", "src/**/*"],
+  "include": ["vite.admin.config.js", "vite.frontend.config.js", "src/**/*"],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
