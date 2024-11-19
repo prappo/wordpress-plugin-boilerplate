@@ -8,7 +8,7 @@ const el = document.getElementById("myplugin");
 
 if (el) {
   ReactDOM.createRoot(el).render(
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode></ThemeProvider>,
