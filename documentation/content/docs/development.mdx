@@ -44,9 +44,9 @@ Route callbacks are functions defined as controller methods. Controller files ar
 
 ## How to add new page to admin panel
 
-* Create a new file in `js/src/pages/{your-page-slug}.jsx` directory.
-* Add a new route in `js/src/routes.jsx` file.
-* Import the new page component and register it in `js/src/routes.jsx` file.
+* Create a new file in `src/admin/pages/{your-page-slug}.jsx` directory.
+* Add a new route in `src/admin/routes.jsx` file.
+* Import the new page component and register it in `src/admin/routes.jsx` file.
 * Add a new menu item in `includes/Admin/Menu.php` file by copying the existing menu item and changing the name, slug, component etc based on the new page.
 * If it needs to store any data in database then add a new model in `includes/Models/{YourCustomModel}.php` file. And migration file in `/database/migrations` directory.
 * If it needs to manipulate data in database then add a new controller in `includes/Controllers/{YourCustomController}/Actions.php` file.
@@ -55,9 +55,9 @@ Route callbacks are functions defined as controller methods. Controller files ar
 
 ## How to add new component
 
-* Create a new file in `js/src/components/{your-component-name}/` directory.
-* Use the component in `js/src/pages/{your-page-slug}.jsx` file.
-* ShadcnUI components are located in `js/src/components/ui` directory.
+* Create a new file in `src/admin/components/{your-component-name}/` directory.
+* Use the component in `src/admin/pages/{your-page-slug}.jsx` file.
+* ShadcnUI components are located in `src/admin/components/ui` directory.
 
 ## Pass data from backend to frontend as javascript object.
 * If you want to pass data from backend to frontend as javascript object then add key value pari in `/includes/Frontend/Frontend.php` file in `get_data` method. This data will be available in frontend as `wordpressPluginBoilerplate` object or which is defined in `const OBJ_NAME` variable in `Frontend.php` file.
