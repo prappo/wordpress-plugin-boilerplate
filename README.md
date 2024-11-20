@@ -186,6 +186,17 @@ npm run dev:server
 ```bash
 npm run build
 ```
+## Start block
+
+```bash
+npm run block:start
+```
+
+## Build block
+
+```bash
+npm run block:build
+```
 
 ## Release
 
