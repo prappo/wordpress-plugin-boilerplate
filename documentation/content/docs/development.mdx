@@ -6,10 +6,16 @@ description: Learn how to develop your WordPress plugin with the boilerplate.
 # Technical Instruction
 
 ## Project Overview
-This is a wordpress plugin which is headless. 
+This is a wordpress plugin which is headless.
+
+## Frontend
+Frontend is built with React Tailwindcss ShadcnUI. Frontend code is located in `/js/frontend/` directory. `src/frontend/routes.jsx` file defines the routes for frontend. `src/frontend/main.jsx` is the main file which is loaded first.
+
+## Gutenberg blocks
 
 ## WordPressAdmin Panel
-Admin panel is built with React Tailwindcss ShadcnUI. Admin panel frontend code is located in `/js/src/` directory. The frontend route for admin panel is `http://your-domain.com/wp-admin/admin.php?page=wordpress-plugin-boilerplate`. New pages routes will be like `http://your-domain.com/wp-admin/admin.php?page=wordpress-plugin-boilerplate#your-page-slug`. It uses `react-router-dom` for routing which is defined in `js/src/routes.jsx` file.
+Admin panel is built with React Tailwindcss ShadcnUI. Admin panel frontend code is located in `/src/admin/` directory. `src/admin/routes.jsx` file defines the routes for admin panel. `src/admin/main.jsx` is the main file which is loaded first. 
+The frontend route for admin panel is `http://your-domain.com/wp-admin/admin.php?page=wordpress-plugin-boilerplate`. New pages routes will be like `http://your-domain.com/wp-admin/admin.php?page=wordpress-plugin-boilerplate#your-page-slug`. It uses `react-router-dom` for routing which is defined in `src/admin/routes.jsx` file.
 
 WordPress admin panel menu function is located in `includes/Admin/Menu.php` file.
 
@@ -17,6 +23,7 @@ WordPress admin panel menu function is located in `includes/Admin/Menu.php` file
 We can fetch and manipulate data from backend with WP Rest API. Rest API structure is given below.
 
 The route is defined in `includes/Routes/Api.php` file.
+You can use this example to define new routes.
 
 ### Route Structure
 
@@ -53,14 +60,14 @@ Route callbacks are functions defined as controller methods. Controller files ar
 * To make connection between frontend and backend, add a new endpoint in `includes/Routes/Api.php` file.
 * Alsway use javascript `fetch` function to fetch data from backend. Use `post` method to create/update/delete data.Use `get` method only for read-only purpose. The root url for api is `wordpressPluginBoilerplate.apiUrl + 'wordpressPluginBoilerplate/v1/{custom-route}'`.
 
-## How to add new component
+## Adding a New Component
 
 * Create a new file in `src/admin/components/{your-component-name}/` directory.
 * Use the component in `src/admin/pages/{your-page-slug}.jsx` file.
 * ShadcnUI components are located in `src/admin/components/ui` directory.
 
-## Pass data from backend to frontend as javascript object.
-* If you want to pass data from backend to frontend as javascript object then add key value pari in `/includes/Frontend/Frontend.php` file in `get_data` method. This data will be available in frontend as `wordpressPluginBoilerplate` object or which is defined in `const OBJ_NAME` variable in `Frontend.php` file.
+## Passing Data from Backend to Frontend as a JavaScript Object
+* If you want to pass data from the backend to the frontend as a JavaScript object, add a key-value pair in includes/Frontend/Frontend.php in the get_data method. This data will be available in the frontend as the wordpressPluginBoilerplate object or the object defined in the const OBJ_NAME variable in Frontend.php.
 
 
 
