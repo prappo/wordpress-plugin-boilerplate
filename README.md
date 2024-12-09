@@ -33,7 +33,7 @@ The plugin consists of two main components: the frontend, built with React, and 
 
 To get started, you need to clone the repository and install the dependencies. Then you can rename the plugin and start development. It's that simple!
 
-<img src="documentation/public/artworks/plugin-dev-process.svg" />
+<img width="100%" src="documentation/public/artworks/plugin-dev-process.svg" />
 
 ## Clone the repository
 ```bash
