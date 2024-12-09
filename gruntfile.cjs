@@ -121,7 +121,7 @@ grunt.initConfig({
             recursive: false
         },
         change_author_uri:{
-            pattern: "https://prappo.dev",
+            pattern: "https://prappo.github.io",
             replacement: config.author_uri,
             path: config.plugin_file_name,
             recursive: false

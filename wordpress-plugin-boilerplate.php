@@ -3,7 +3,7 @@
  * Plugin Name: WordPress Plugin Boilerplate
  * Description: A boilerplate for WordPress plugins.
  * Author: Prappo
- * Author URI: https://prappo.dev
+ * Author URI: https://prappo.github.io
  * License: GPLv2
  * Version: 1.0.0
  * Text Domain: wordpress-plugin-boilerplate

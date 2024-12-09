@@ -33,6 +33,8 @@ The plugin consists of two main components: the frontend, built with React, and 
 
 To get started, you need to clone the repository and install the dependencies. Then you can rename the plugin and start development. It's that simple!
 
+<img src="documentation/public/artworks/plugin-dev-process.svg" />
+
 ## Clone the repository
 ```bash
 git clone https://github.com/prappo/wordpress-plugin-boilerplate.git
@@ -54,7 +56,7 @@ You can easly rename the plugin by changing data in `plugin-config.json` file.
     "plugin_version":"1.0.0",
     "plugin_file_name":"wordpress-plugin-boilerplate.php",
     "author_name":"Prappo",
-    "author_uri":"https://prappo.dev",
+    "author_uri":"https://prappo.github.io",
     "text_domain":"wordpress-plugin-boilerplate",
     "domain_path":"/languages",
     "main_class_name":"WordPressPluginBoilerplate",
