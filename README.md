@@ -246,6 +246,22 @@ You can also use the `orderBy` method to sort your posts.
 $posts = Posts::orderBy( 'post_title', 'desc' )->get();
 ```
 
+## Passing data from backend to frontend
+
+Just pass your data to the array in the Asset file.
+
+For example: For admin:
+
+https://github.com/prappo/wordpress-plugin-boilerplate/blob/8d982b63f50beb1dffd43c29bff894814b5e7945/includes/Assets/Frontend.php#L104-L110
+
+And access data on react like this 
+
+https://github.com/prappo/wordpress-plugin-boilerplate/blob/8d982b63f50beb1dffd43c29bff894814b5e7945/src/frontend/components/application-layout/LayoutOne.jsx#L58
+
+Remember the object `wordpressPluginBoilerplateFrontend` name can be defined here 
+
+https://github.com/prappo/wordpress-plugin-boilerplate/blob/8d982b63f50beb1dffd43c29bff894814b5e7945/includes/Assets/Frontend.php#L30
+
 ## Development
 
 ```bash
