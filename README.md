@@ -264,6 +264,57 @@ Remember the object `wordpressPluginBoilerplateFrontend` name can be defined her
 
 https://github.com/prappo/wordpress-plugin-boilerplate/blob/8d982b63f50beb1dffd43c29bff894814b5e7945/includes/Assets/Frontend.php#L30
 
+## Shortcode
+
+You can create a shortcode by using the `Shortcode` class.
+
+```php
+
+/**
+ * Example Usage
+ * 
+ * Registering a shortcode that renders a PHP view file
+ */
+Shortcode::add()
+    ->tag('myshortcode')
+    ->attrs(['id', 'name'])
+    ->render( plugin_dir_path( __FILE__ ) . 'views/shortcode/myshortcode.php');
+
+/**
+ * Registering a shortcode that renders with a function
+ */
+Shortcode::add()
+    ->tag('customshortcode')
+    ->attrs(['title', 'class'])
+    ->render(function($atts, $content) {
+        return "<div class='{$atts['class']}'><h3>{$atts['title']}</h3><p>{$content}</p></div>";
+    });
+```
+
+The php render file should be in the `views/shortcode` folder.
+
+For example: `views/shortcode/myshortcode.php`
+
+```php
+<div id="<?= isset($id) ? esc_attr($id) : '' ?>" class="shortcode-box">
+    <h3><?= isset($name) ? esc_html($name) : 'Default Title' ?></h3>
+    <p><?= isset($shortcode_content) ? esc_html($shortcode_content) : '' ?></p>
+</div>
+```
+
+### Example Usage in WordPress editor
+
+```
+
+[myshortcode id="box1" name="Example Shortcode"]
+This is the content inside the shortcode.
+[/myshortcode]
+
+[customshortcode title="Dynamic Title" class="highlight"]
+Some highlighted content.
+[/customshortcode]
+```
+
 ## Development
 
 ```bash
