@@ -1,5 +1,7 @@
 # WordPress Plugin Boilerplate
-Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver your plugin with confidence!
+#### Create your WordPress plugin in weeks, not months. Rapidly prototype and deliver your plugin with confidence!
+
+#### This boilerplate has built-in marketing site and documentation setup which you can use to showcase your plugin.
 ## Preview
 
 <a href='https://prappo.github.io/wordpress-plugin-boilerplate/preview' target="_blank"><img alt='Wordpress' src='https://img.shields.io/badge/Live_Preview-100000?style=for-the-badge&logo=Wordpress&logoColor=white&labelColor=21759B&color=21759B'/></a>
