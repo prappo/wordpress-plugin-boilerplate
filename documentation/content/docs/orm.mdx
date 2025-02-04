@@ -1,0 +1,76 @@
+---
+title: ORM
+description: ORM for the Wordpress Plugin Boilerplate
+---
+
+If you are familiar with Laravel, you will find this ORM very familiar. It is a simple and easy-to-use ORM for WordPress.
+
+You can find the ORM documentation [here](https://github.com/prappo/wp-eloquent)
+
+Create your model in `includes/Models` folder.
+
+Example: `includes/Models/Posts.php`
+
+```php
+<?php
+
+namespace WordPressPluginBoilerplate\Models;
+
+use Prappo\WpEloquent\Database\Eloquent\Model;
+
+class Posts extends Model {
+	/**
+	 * The table associated with the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'posts';
+
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = array( 'post_title', 'post_content' );
+}
+
+```
+
+You can access all your posts like this:
+
+```php
+$posts = Posts::all();
+```
+
+You can also create a new post like this:
+
+```php
+$post = Posts::create( array( 'post_title' => 'Hello World', 'post_content' => 'This is a test post' ) );
+```
+
+You can also update a post like this:
+
+```php
+$post = Posts::find( 1 );
+$post->post_title = 'Hello World';
+$post->save();
+```
+
+You can also delete a post like this:
+
+```php
+$post = Posts::find( 1 );
+$post->delete();
+```
+
+You can also use the `where` method to filter your posts.
+
+```php
+$posts = Posts::where( 'post_title', 'like', '%hello%' )->get();
+```
+
+You can also use the `orderBy` method to sort your posts.
+
+```php
+$posts = Posts::orderBy( 'post_title', 'desc' )->get();
+```
