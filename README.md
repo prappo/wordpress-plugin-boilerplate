@@ -14,6 +14,10 @@
     <th>Dark Mode</th>
   </tr>
   <tr>
+  <td><img src="documentation/public/artworks/images/chart.png" /></td>
+  <td></td>
+  </tr>
+  <tr>
     <td><img src="documentation/public/artworks/images/dashboard-light.png" /></td>
     <td><img src="documentation/public/artworks/images/dashboard-dark.png" /></td>
     
@@ -28,6 +32,7 @@
     <td><img src="documentation/public/artworks/images/settings-dark.png" /></td>
     
   </tr>
+  
 </table>
 
 ## Get Started
