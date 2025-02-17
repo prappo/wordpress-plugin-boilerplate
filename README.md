@@ -143,6 +143,8 @@ npm run rename
     <ul>
       <li><summary><strong>📂 admin</strong></summary></li>
       <li><summary><strong>📂 frontend</strong></summary></li>
+      <li><summary><strong>📂 components</strong></summary></li>
+      <li><summary><strong>📂 lib</strong></summary></li>
       <li><summary><strong>📂 blocks</strong></summary></li>
     </ul>
     </details>

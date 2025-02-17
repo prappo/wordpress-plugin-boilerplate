@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ShoppingCart, Facebook, Twitter, Instagram } from 'lucide-react'
 
-
-
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
