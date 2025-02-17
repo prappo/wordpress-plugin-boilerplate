@@ -355,3 +355,10 @@ npm run release
 ```
 
 It will create a relase plugin in `release` folder
+
+## Trouble shooting
+
+If you are facing any issue with the development server, you can try the following steps:
+
+1. If you are using Local WP you might see dev server is not working because of SSL certificate issue or domain mismatch.You can fix this by chaning your `Router mode` to `localhost`.
+
