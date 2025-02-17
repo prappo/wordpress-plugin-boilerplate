@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite -c vite.frontend.config.js --port 5173\" \"vite -c vite.admin.config.js --port 5174\"",
+    "dev:admin": "vite -c vite.admin.config.js --port 5174",
+    "dev:frontend": "vite -c vite.frontend.config.js --port 5173",
     "dev:all": "concurrently \"npm run dev\" \"npm run block:start\"",
     "dev:server": "concurrently \"npm run dev\" \"npx @wp-now/wp-now start\"",
     "build": "vite build -c vite.frontend.config.js && vite build -c vite.admin.config.js && npm run block:build",

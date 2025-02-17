@@ -325,6 +325,13 @@ Some highlighted content.
 ```bash
 npm run dev
 ```
+If you want to run only frontend or admin you can use the following commands:
+
+```bash
+npm run dev:frontend
+npm run dev:admin
+```
+
 ## Development with server
 
 ```bash
