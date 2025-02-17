@@ -84,7 +84,7 @@ npm run rename
 ```bash
 npx shadcn@latest add accordion
 ```
-
+It will install the component in `src/components` folder.
 
 
 ## Structure
@@ -376,4 +376,6 @@ It will create a relase plugin in `release` folder
 If you are facing any issue with the development server, you can try the following steps:
 
 1. If you are using Local WP you might see dev server is not working because of SSL certificate issue or domain mismatch.You can fix this by chaning your `Router mode` to `localhost`.
+
+2. Sometimes you might see on the first run of `npm run dev` you might see nothing is happening. You can try to run `npm run dev` again.
 
