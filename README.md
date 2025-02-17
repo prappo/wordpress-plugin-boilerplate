@@ -79,6 +79,12 @@ Then run the following command to rename the plugin
 ```bash
 npm run rename
 ```
+## Add Shadcn UI
+
+```bash
+npx shadcn@latest add accordion
+```
+
 
 
 ## Structure
