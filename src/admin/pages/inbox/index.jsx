@@ -1,7 +1,7 @@
 
 
 import { MailComp } from "@/components/inbox/mail"
-import { accounts, mails } from "@/pages/inbox/data"
+import { accounts, mails } from "@/admin/pages/inbox/data"
 
 export default function MailPage() {
 

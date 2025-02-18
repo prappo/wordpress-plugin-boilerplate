@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator"
-import { ProfileForm } from "@/pages/settings/profile-form"
-import SettingsLayout from "./layout"
+import { ProfileForm } from "@/admin/pages/settings/profile-form"
+import SettingsLayout from "@/admin/pages/settings/layout"
 
 export default function Settings() {
   return (

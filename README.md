@@ -79,6 +79,12 @@ Then run the following command to rename the plugin
 ```bash
 npm run rename
 ```
+## Add Shadcn UI
+
+```bash
+npx shadcn@latest add accordion
+```
+It will install the component in `src/components` folder.
 
 
 ## Structure
@@ -143,6 +149,8 @@ npm run rename
     <ul>
       <li><summary><strong>📂 admin</strong></summary></li>
       <li><summary><strong>📂 frontend</strong></summary></li>
+      <li><summary><strong>📂 components</strong></summary></li>
+      <li><summary><strong>📂 lib</strong></summary></li>
       <li><summary><strong>📂 blocks</strong></summary></li>
     </ul>
     </details>
@@ -325,6 +333,13 @@ Some highlighted content.
 ```bash
 npm run dev
 ```
+If you want to run only frontend or admin you can use the following commands:
+
+```bash
+npm run dev:frontend
+npm run dev:admin
+```
+
 ## Development with server
 
 ```bash
@@ -355,3 +370,12 @@ npm run release
 ```
 
 It will create a relase plugin in `release` folder
+
+## Trouble shooting
+
+If you are facing any issue with the development server, you can try the following steps:
+
+1. If you are using Local WP you might see dev server is not working because of SSL certificate issue or domain mismatch.You can fix this by chaning your `Router mode` to `localhost`.
+
+2. Sometimes you might see on the first run of `npm run dev` you might see nothing is happening. You can try to run `npm run dev` again.
+
