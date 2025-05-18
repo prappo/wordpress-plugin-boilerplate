@@ -22,6 +22,19 @@
   
 </table>
 
+### Install using CLI tool
+
+Install [PlugKit](https://github.com/prappo/plugkit). You can find the installation instruction from here [https://github.com/prappo/plugkit](https://github.com/prappo/plugkit)
+
+To create a new wordpress plugin boilerplate.
+
+```bash
+plugkit create my-plugin
+```
+Or you can follow the manual installation process.
+<details>
+<summary><strong>Manual installation</strong></summary>
+
 ## Get Started
 The plugin consists of two main components: the frontend, built with React, and the backend, which communicates via an API.
 
@@ -66,6 +79,8 @@ Then run the following command to rename the plugin
 ```bash
 npm run rename
 ```
+</details>
+
 ## Add Shadcn UI
 
 ```bash
