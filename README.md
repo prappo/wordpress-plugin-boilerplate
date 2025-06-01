@@ -24,13 +24,15 @@
 
 ### Install using CLI tool
 
-Install [PlugKit](https://github.com/prappo/plugkit). You can find the installation instruction from here [https://github.com/prappo/plugkit](https://github.com/prappo/plugkit)
+Install [PlugKit](https://github.com/prappo/plugkit). You can find the installation instructions from here [https://github.com/prappo/plugkit](https://github.com/prappo/plugkit)
 
-To create a new wordpress plugin boilerplate.
+To create a new WordPress plugin boilerplate.
 
 ```bash
 plugkit create my-plugin
 ```
+https://github.com/user-attachments/assets/39ab761e-ca40-4613-a88c-40620a1b2523
+
 Or you can follow the manual installation process.
 <details>
 <summary><strong>Manual installation</strong></summary>
