@@ -383,3 +383,9 @@ If you are facing any issue with the development server, you can try the followi
 
 2. Sometimes you might see on the first run of `npm run dev` you might see nothing is happening. You can try to run `npm run dev` again.
 
+
+## Made with WordPress Plugin Boilerplate
+[WordPress AI Assistant](https://github.com/prappo/wordpress-ai-assistant)
+
+<img src="https://github.com/prappo/wordpress-ai-assistant/blob/main/docs/screenshots/wordpress-assistant-chat.png" />
+
