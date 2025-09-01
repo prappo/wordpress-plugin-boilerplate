@@ -354,7 +354,7 @@ npm run dev:server
 ```bash
 npm run build
 ```
-## Start block
+## Developing block
 
 ```bash
 npm run block:start
