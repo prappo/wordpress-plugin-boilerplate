@@ -5,7 +5,7 @@ This boilerplate has a built-in marketing site and documentation setup that you 
 
 <a href='https://prappo.github.io/wordpress-plugin-boilerplate/preview' target="_blank"><img alt='Wordpress' src='https://img.shields.io/badge/Live_Preview-100000?style=for-the-badge&logo=Wordpress&logoColor=white&labelColor=21759B&color=21759B'/></a>
 
-### Screenshots
+## Screenshots
 
 <table>
  
@@ -21,7 +21,14 @@ This boilerplate has a built-in marketing site and documentation setup that you 
   
 </table>
 
-### Install using CLI tool
+## ☕️ Buy me a coffee
+
+Whether you use this project, have learned something from it, or just like it, please consider supporting it by buying
+me a coffee, so I can dedicate more time on open-source projects like this :)
+
+<a href="https://buymeacoffee.com/prappo" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+## Install using CLI tool
 
 Install [PlugKit](https://github.com/prappo/plugkit). You can find the installation instructions from here [https://github.com/prappo/plugkit](https://github.com/prappo/plugkit)
 
