@@ -187,6 +187,11 @@ Route::prefix( $prefix, function( Route $route ) {
     $route->get( $endpoint, $callback, $auth = false );
     $route->post( $endpoint, $callback, $auth = false );
 });
+
+// Authentication.
+Route::prefix( $prefix, function( Route $route ) 
+    $route->post( $endpoint, $callback, $auth = false );
+})->auth( 'AuthController@check' );
 ```
 #### API Example
 ```php
