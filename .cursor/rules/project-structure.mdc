@@ -8,7 +8,7 @@ alwaysApply: true
 ## Project Overview
 This is a WordPress Plugin Boilerplate project that follows modern development practices with:
 - **Backend**: PHP with object-oriented architecture, namespaces, and WordPress standards
-- **Frontend**: React with Vite, TypeScript, Tailwind CSS, and modern UI components
+- **Frontend**: React with Vite, TypeScript, Tailwind CSS, and shadcn ui
 - **Build System**: Vite for frontend, Grunt for PHP tasks, npm for package management
 - **Architecture**: MVC pattern with separation of concerns
 
