@@ -48,6 +48,8 @@ npm run storybook      # port 6006
 vendor/bin/phpcs --standard=phpcs.xml.dist
 ```
 
+Note: there is no JS/PHP test runner wired up. Vitest is listed as a devDependency but no `test` script exists in `package.json`.
+
 ## Architecture
 
 ### Two-layer structure: PHP backend + React frontend
@@ -78,11 +80,24 @@ Routes are defined in `includes/Routes/Api.php` using `Route::prefix(ROUTE_PREFI
 
 ### Backend-to-frontend data passing
 
-PHP passes data to React via `wp_localize_script` in Asset classes. Frontend accesses it as a global object (e.g., `wordpressPluginBoilerplateFrontend`).
+PHP passes data to React via `wp_localize_script` in Asset classes. Frontend accesses it as a global object (e.g., `wordpressPluginBoilerplateFrontend`). The global name is defined in the Asset class and must match on the JS side.
+
+### Shortcodes
+
+`libs/Utils/Shortcode.php` provides a fluent builder: `Shortcode::add()->tag('x')->attrs([...])->render($callable_or_view_path)`. View-file renders resolve to `views/shortcode/*.php`; attrs become variables in scope, with `$shortcode_content` for inner content.
+
+### Plugin renaming
+
+`npm run rename` reads `plugin-config.json` and rewrites namespace, main class/function names, text domain, plugin file name, and constant/function prefixes across the codebase (grunt task + composer dump-autoload). Do not hand-edit these identifiers in many places — change `plugin-config.json` and run `npm run rename` instead. After rename, the `wpb_` / `WPB_` prefixes and the global JS object name shown in this file will change to match the new config.
 
 ## Code Style
 
 - PHP follows WordPress Coding Standards (see `phpcs.xml.dist`); minimum PHP 7.2, minimum WP 5.9
 - JS/JSX uses Prettier (wp-prettier variant) with Tailwind plugin and import sorting
-- Namespace: `WordPressPluginBoilerplate`; constant prefix: `WORDPRESS_PLUGIN_BOILERPLATE_`
+- Default namespace: `WordPressPluginBoilerplate`; default constant prefix: `WORDPRESS_PLUGIN_BOILERPLATE_` (both parameterized through `plugin-config.json` — see Plugin renaming)
 - `@` path alias resolves to `src/` in Vite configs
+
+## Troubleshooting
+
+- Local WP + `npm run dev`: if the Vite dev server can't be reached from the site, set Local's Router mode to `localhost` (SSL/domain mismatch otherwise blocks HMR).
+- First-run `npm run dev` sometimes appears to hang — re-running usually resolves it.
