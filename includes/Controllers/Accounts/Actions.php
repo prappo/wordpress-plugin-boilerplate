@@ -84,12 +84,23 @@ class Actions {
 	}
 
 	/**
+	 * Columns returned by the account listing.
+	 *
+	 * Only the fields the UI renders are selected, so the encrypted password
+	 * and other unused columns are never read from the database or sent over
+	 * the wire.
+	 *
+	 * @var array
+	 */
+	const LIST_COLUMNS = array( 'id', 'first_name', 'last_name', 'email' );
+
+	/**
 	 * Retrieves all accounts from the database.
 	 *
 	 * @return mixed The list of accounts.
 	 */
 	public function get() {
-		return Accounts::all();
+		return Accounts::all( self::LIST_COLUMNS );
 	}
 
 	/**
