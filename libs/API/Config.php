@@ -1,7 +1,7 @@
 <?php
 /**
  * Route Configuration.
- * 
+ *
  * @since 1.0.0
  */
 
@@ -71,7 +71,7 @@ class Config {
 
 		add_action(
 			'rest_api_init',
-			function() {
+			function () {
 				if ( ! empty( self::$namespace ) ) {
 					Route::set_class_namespace( self::$namespace );
 				}
@@ -88,7 +88,7 @@ class Config {
 		 */
 		add_filter(
 			'rest_request_before_callbacks',
-			function( $response, $handler, \WP_REST_Request $request ) {
+			function ( $response, $handler, \WP_REST_Request $request ) {
 				$request->user = null;
 				return $response;
 			},

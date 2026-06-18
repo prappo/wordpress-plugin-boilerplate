@@ -19,7 +19,7 @@ class Messages {
 	public static function error_account_exists() {
 		return array(
 			'status'  => 'error',
-			'message' => 'account already exists',
+			'message' => __( 'account already exists', 'wordpress-plugin-boilerplate' ),
 		);
 	}
 
@@ -31,7 +31,7 @@ class Messages {
 	public static function success_acount_created() {
 		return array(
 			'status'  => 'success',
-			'message' => 'account created',
+			'message' => __( 'account created', 'wordpress-plugin-boilerplate' ),
 		);
 	}
 
@@ -43,7 +43,7 @@ class Messages {
 	public static function success_account_deleted() {
 		return array(
 			'status'  => 'success',
-			'message' => 'account deleted successfully',
+			'message' => __( 'account deleted successfully', 'wordpress-plugin-boilerplate' ),
 		);
 	}
 
@@ -55,7 +55,7 @@ class Messages {
 	public static function error_account_deleted() {
 		return array(
 			'status'  => 'error',
-			'message' => 'unable to delete account',
+			'message' => __( 'unable to delete account', 'wordpress-plugin-boilerplate' ),
 		);
 	}
 
@@ -67,7 +67,7 @@ class Messages {
 	public static function success_account_update() {
 		return array(
 			'status'  => 'success',
-			'message' => 'account updated successfully',
+			'message' => __( 'account updated successfully', 'wordpress-plugin-boilerplate' ),
 		);
 	}
 
@@ -79,7 +79,7 @@ class Messages {
 	public static function error_account_update() {
 		return array(
 			'status'  => 'error',
-			'message' => 'unable to update account',
+			'message' => __( 'unable to update account', 'wordpress-plugin-boilerplate' ),
 		);
 	}
 }

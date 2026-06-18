@@ -320,7 +320,10 @@ class Route {
 		}
 
 		if ( true === $callback ) {
-			return '__return_false';
+			// `true` means the route requires an authenticated user.
+			return function () {
+				return is_user_logged_in();
+			};
 		}
 
 		if ( ! is_array( $callback ) && is_callable( $callback ) ) {

@@ -4,8 +4,11 @@
  * Description: A boilerplate for WordPress plugins.
  * Author: Prappo
  * Author URI: https://prappo.github.io
- * License: GPLv2
  * Version: 1.0.0
+ * Requires at least: 5.9
+ * Requires PHP: 7.2
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wordpress-plugin-boilerplate
  * Domain Path: /languages
  *

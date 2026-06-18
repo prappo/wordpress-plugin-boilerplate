@@ -3,6 +3,7 @@
 namespace WordPressPluginBoilerplate\Controllers\Accounts;
 
 use WordPressPluginBoilerplate\Models\Accounts;
+use WordPressPluginBoilerplate\Libs\Utils\Encryption;
 
 /**
  * Class Actions
@@ -48,10 +49,13 @@ class Actions {
 	 * @return array The response message.
 	 */
 	public function create( \WP_REST_Request $request ) {
-		if ( Accounts::where(
-			'email',
-			$request->get_param( 'email' )
-		)->exists() ) {
+		$email = sanitize_email( (string) $request->get_param( 'email' ) );
+
+		if ( ! is_email( $email ) ) {
+			return Messages::error_account_exists();
+		}
+
+		if ( Accounts::where( 'email', $email )->exists() ) {
 			return Messages::error_account_exists();
 		}
 
@@ -64,17 +68,19 @@ class Actions {
 	 * Adds a new account to the database.
 	 *
 	 * @param \WP_REST_Request $request The REST request object.
-	 * @return void
+	 * @return bool True on success.
 	 */
 	public function add( $request ) {
 		$account             = new Accounts();
 		$account->host       = self::GMAIL_SMPT_HOST;
 		$account->port       = self::GMAIL_PORT;
-		$account->first_name = $request->get_param( 'firstName' );
-		$account->last_name  = $request->get_param( 'lastName' );
-		$account->email      = $request->get_param( 'email' );
-		$account->password   = $request->get_param( 'appPassword' );
+		$account->first_name = sanitize_text_field( (string) $request->get_param( 'firstName' ) );
+		$account->last_name  = sanitize_text_field( (string) $request->get_param( 'lastName' ) );
+		$account->email      = sanitize_email( (string) $request->get_param( 'email' ) );
+		$account->password   = Encryption::encrypt( (string) $request->get_param( 'appPassword' ) );
 		$account->save();
+
+		return true;
 	}
 
 	/**
@@ -93,7 +99,12 @@ class Actions {
 	 * @return array The response message.
 	 */
 	public function delete( \WP_REST_Request $request ) {
-		$id = $request->get_param( 'id' ); // Account ID requested to delete.
+		$id = absint( $request->get_param( 'id' ) ); // Account ID requested to delete.
+
+		if ( ! $id ) {
+			return Messages::error_account_deleted();
+		}
+
 		try {
 			Accounts::where( 'id', $id )->delete();
 			return Messages::success_account_deleted();
@@ -109,15 +120,19 @@ class Actions {
 	 * @return array The response message.
 	 */
 	public function update( \WP_REST_Request $request ) {
-		$id = $request->get_param( 'id' );
+		$id = absint( $request->get_param( 'id' ) );
+
+		if ( ! $id ) {
+			return Messages::error_account_update();
+		}
 
 		try {
 			Accounts::where( 'id', $id )->update(
 				array(
-					'first_name' => $request->get_param( 'firstName' ),
-					'last_name'  => $request->get_param( 'lastName' ),
-					'email'      => $request->get_param( 'email' ),
-					'password'   => $request->get_param( 'appPassword' ),
+					'first_name' => sanitize_text_field( (string) $request->get_param( 'firstName' ) ),
+					'last_name'  => sanitize_text_field( (string) $request->get_param( 'lastName' ) ),
+					'email'      => sanitize_email( (string) $request->get_param( 'email' ) ),
+					'password'   => Encryption::encrypt( (string) $request->get_param( 'appPassword' ) ),
 				)
 			);
 			return Messages::success_account_update();

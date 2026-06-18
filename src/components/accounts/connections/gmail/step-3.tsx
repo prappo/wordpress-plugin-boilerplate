@@ -109,6 +109,7 @@ export default function Step3({ stepCount }: StepProps) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "X-WP-Nonce": wordpressPluginBoilerplate.nonce,
           },
           body: JSON.stringify(formData),
         },
