@@ -18,7 +18,7 @@ class Actions {
 	}
 
 	public function get_post( \WP_REST_Request $request ) {
-		$post = Posts::find( $request->get_param( 'id' ) );
+		$post = Posts::find( absint( $request->get_param( 'id' ) ) );
 		return $post;
 	}
 }

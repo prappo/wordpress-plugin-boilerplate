@@ -28,4 +28,17 @@ Route::prefix(
 		// Allow hooks to add more custom API routes.
 		do_action( 'wordpress_plugin_boilerplate_api', $route );
 	}
+)->auth(
+	/**
+	 * Permission callback for the plugin's REST routes.
+	 *
+	 * Requires an authenticated user with the `manage_options` capability.
+	 * The WordPress REST API additionally validates the `wp_rest` nonce sent
+	 * by the client in the `X-WP-Nonce` header before this callback runs.
+	 *
+	 * @return bool
+	 */
+	function () {
+		return current_user_can( 'manage_options' );
+	}
 );

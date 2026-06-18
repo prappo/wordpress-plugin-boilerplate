@@ -84,7 +84,7 @@ PHP passes data to React via `wp_localize_script` in Asset classes. Frontend acc
 
 ### Shortcodes
 
-`libs/Utils/Shortcode.php` provides a fluent builder: `Shortcode::add()->tag('x')->attrs([...])->render($callable_or_view_path)`. View-file renders resolve to `views/shortcode/*.php`; attrs become variables in scope, with `$shortcode_content` for inner content.
+`libs/Utils/Shortcode.php` provides a fluent builder: `Shortcode::add()->tag('x')->attrs([...])->render($callable_or_view_path)`. View-file renders resolve to `views/shortcode/*.php`; attrs are available in the view via the `$atts` array (e.g. `$atts['name']`), with `$shortcode_content` for inner content. (Attributes are intentionally not `extract()`-ed into local variables — escape them in the view.)
 
 ### Plugin renaming
 

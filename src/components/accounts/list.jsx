@@ -5,7 +5,14 @@ import DeleteWindow from "./window/delete";
 
 const fetchData = async () => {
   try {
-    const response = await fetch(wordpressPluginBoilerplate.apiUrl + "myplugin/v1/accounts/get");
+    const response = await fetch(
+      wordpressPluginBoilerplate.apiUrl + "myplugin/v1/accounts/get",
+      {
+        headers: {
+          "X-WP-Nonce": wordpressPluginBoilerplate.nonce,
+        },
+      },
+    );
     if (!response.ok) {
       throw new Error("Network response was not ok.");
     }
@@ -21,6 +28,13 @@ const deleteAccount = async () => {
   try {
     const response = await fetch(
       wordpressPluginBoilerplate.apiUrl + "myplugin/v1/accounts/delete",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-WP-Nonce": wordpressPluginBoilerplate.nonce,
+        },
+      },
     );
     if (!response.ok) {
       throw new Error("Network response was not ok");

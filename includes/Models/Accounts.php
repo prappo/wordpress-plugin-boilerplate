@@ -45,4 +45,13 @@ class Accounts extends Model {
 		'created_at',
 		'updated_at',
 	);
+
+	/**
+	 * The attributes that should be hidden when the model is serialized.
+	 *
+	 * Keeps the stored (encrypted) SMTP password out of REST API responses.
+	 *
+	 * @var array
+	 */
+	protected $hidden = array( 'password' );
 }

@@ -106,6 +106,7 @@ class Admin {
 			'developer' => 'prappo',
 			'isAdmin'   => is_admin(),
 			'apiUrl'    => rest_url(),
+			'nonce'     => wp_create_nonce( 'wp_rest' ),
 			'userInfo'  => $this->get_user_data(),
 		);
 	}

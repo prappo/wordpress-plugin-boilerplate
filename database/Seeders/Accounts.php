@@ -9,6 +9,7 @@
 namespace WordPressPluginBoilerplate\Database\Seeders;
 
 use Prappo\WpEloquent\Database\Capsule\Manager as Capsule;
+use WordPressPluginBoilerplate\Libs\Utils\Encryption;
 /**
  * Class Accounts
  *
@@ -37,7 +38,7 @@ class Accounts {
 				'last_name'  => 'Doe',
 				'email'      => 'demouser1@email.com',
 				'name'       => 'John Doe',
-				'password'   => 'password',
+				'password'   => Encryption::encrypt( 'password' ),
 				'created_at' => gmdate( 'Y-m-d H:i:s' ),
 				'updated_at' => gmdate( 'Y-m-d H:i:s' ),
 			),
@@ -49,7 +50,7 @@ class Accounts {
 				'last_name'  => 'Doe',
 				'email'      => 'demouser2@email.com',
 				'name'       => 'Jane Doe',
-				'password'   => 'password',
+				'password'   => Encryption::encrypt( 'password' ),
 				'created_at' => gmdate( 'Y-m-d H:i:s' ),
 				'updated_at' => gmdate( 'Y-m-d H:i:s' ),
 			),
